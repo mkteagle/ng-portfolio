@@ -61,6 +61,9 @@ body {
 .center {
     text-align: center;
 }
+.logo {
+    width: 
+}
 @media all and (max-width: 640px) {
     .grid {
         flex-flow:column wrap;
