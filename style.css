@@ -62,7 +62,8 @@ body {
     text-align: center;
 }
 .logo {
-    width: 
+    width: 25%;
+    height: 25%;
 }
 @media all and (max-width: 640px) {
     .grid {
@@ -79,5 +80,9 @@ body {
     }
     .wrapper-bg {
         width: 87%;
+    }
+    .logo {
+        width: 50%;
+        height: 50%;
     }
 }
