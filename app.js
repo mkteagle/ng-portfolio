@@ -1,5 +1,4 @@
 (function() {
-    angular.module('ngPortfolio',
-        ['ngController']
-    )
+    angular.module('ngPortfolio', ['ngController'])
+
 }());

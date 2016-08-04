@@ -1,5 +1,5 @@
 (function() {
-    angular.module('ngController')
+    angular.module('ngController', [])
         .controller('ngController', ngController);
     function ngController() {
         
