@@ -7,8 +7,7 @@
 
 	app.use('/', express.static(__dirname + '/'));
 	app.use('/', express.static(__dirname));
-	app.use('/node_modules', express.static(__dirname + '/node_modules'));
-	var port = (process.env.PORT || 8080);
+	var port = (process.env.PORT || 5000);
 
 	var firebase = require("firebase");
 	// firebase.initializeApp({

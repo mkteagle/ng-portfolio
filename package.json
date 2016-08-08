@@ -18,6 +18,7 @@
     "firebase": "^3.2.1"
   },
   "devDependencies": {
+    "browser-sync": "^2.14.0",
     "concurrently": "^2.0.0",
     "del": "^2.2.1",
     "gulp": "^3.9.1",
@@ -30,6 +31,7 @@
     "gulp-livereload": "^3.8.1",
     "gulp-nodemon": "^2.1.0",
     "gulp-notify": "^2.2.0",
+    "gulp-open": "^2.0.0",
     "gulp-rename": "^1.2.2",
     "gulp-ruby-sass": "^2.0.6",
     "gulp-uglify": "^2.0.0",

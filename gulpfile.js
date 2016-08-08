@@ -1,5 +1,6 @@
 (function () {
 	var gulp = require('gulp'),
+		browserSync = require('browser-sync'),
 		sass = require('gulp-ruby-sass'),
 		autoprefixer = require('gulp-autoprefixer'),
 		cssnano = require('gulp-cssnano'),
@@ -12,6 +13,7 @@
 		cache = require('gulp-cache'),
 		livereload = require('gulp-livereload'),
 		nodemon = require('gulp-nodemon'),
+		open = require('gulp-open'),
 		del = require('del');
 
 
@@ -66,15 +68,29 @@
 			.pipe(gulp.dest('./public'));
 	});
 
-	gulp.task('develop', ['clean'], function(){
-		gulp.start('styles', 'scripts', 'images', 'html', 'serverjs', 'addcss');
+	gulp.task('nodeman', [], function(){
 		nodemon({ script: 'public/server.js'
 			, ext: 'html js'
 			, ignore: ['ignored.js']
 			, tasks: [] })
 			.on('restart', function () {
 				console.log('restarted!')
-			})
+			});
+	});
+
+	gulp.task('develop', ['clean', 'styles', 'scripts', 'images','html', 'serverjs', 'addcss','nodeman'], function(){
+		var port = gutil.env.port || 3000;
+		var uiPort = gutil.env['ui-port'] || (port + 1);
+
+		browserSync.init({
+			proxy: "http://localhost:8080",
+			files: ["public/**/*.*"],
+			browser: "google chrome",
+			port: port,
+			ui: {
+				port: uiPort
+			}
+		});
 	});
 
 	gulp.task('watch', function() {

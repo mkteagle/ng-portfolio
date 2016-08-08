@@ -1,56 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Michael Teagle's Portfolio</title>
-    <link href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="assets/styles/main.css">
+	<meta charset="UTF-8">
+	<title>Michael Teagle's Portfolio</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link rel="stylesheet" href="assets/styles/main.css">
 </head>
-<body>
-<div class="container">
-    <div class="wrapper-bg">
-        <div class="main">
-	        <div class="row">
-		        <div class="main-container">
-			        <div class="grid">
-				        <div class="logo-container">
-				            <div class="logo">
-					            <object type="image/svg+xml" data="assets/img/MT5.svg"></object>
-				            </div>
-				        </div>
-				        <div class="about">
-					        <div class="center">
-						        <h2>About</h2>
-					        </div>
-				        </div>
-			        </div>
-		        </div>
-	        </div>
-        <div class="portfolio">
-        <div class="row">
-            <div class="center">
-            <h2>Welcome to my Portfolio</h2>
-            </div>
-        </div>
-        <div class="row">
-	        <div class="portfolio-first">
-		        <img class="logo-img" src="./assets/img/doing_utah_daily_white.png">
-	        </div>
-            <div class="grid">
-                <div class="first">1</div>
-                <div class="second">2</div>
-                <div class="third">3</div>
-            </div>
-        </div>
-    </div>
-        <div class="resume">
-            <div class="center">
-                <h2>Resume</h2>
-            </div>
-
-        </div>
-    </div>
-    </div>
+<body ng-app="ngPortfolio">
+<div class="wrapper-bg" ng-controller="ngController as nc">
+	<div class="main">
+		<div class="row">
+			<div class="main-container">
+				<div class="grid">
+					<div class="logo-container">
+						<div class="logo">
+							<object type="image/svg+xml" data="assets/img/MT5.svg"></object>
+						</div>
+					</div>
+					<div class="about-container">
+						<div class="navToggle"><div class="icon"></div></div>
+						<div id="menu"><ul>
+							<li><a href="#" title="Home">Home</a></li>
+							<li><a href="#" title="About">About</a></li>
+							<li><a href="#" title="Work">Work</a></li>
+							<li><a href="#" title="Contact">Contact</a></li>
+						</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="portfolio">
+			<div class="row">
+				<div class="center">
+					<h5><span class="heading-span">Portfolio</span></h5>
+				</div>
+			</div>
+			<div class="row">
+				<div class="portfolio-first">
+					<img class="logo-img" src="./assets/img/doing_utah_daily_white.png">
+				</div>
+				<div class="grid">
+					<div class="firs" ng-mouseenter="nc.options=true" ng-mouseleave="nc.options=false">1</div>
+					<div class="first-item" ng-if="nc.options">1</div>
+					<div class="second">2</div>
+					<div class="third">3</div>
+				</div>
+			</div>
+		</div>
+		<div class="resume">
+			<div class="center">
+				<h2>Resume</h2>
+			</div>
+		</div>
+		<div class="contact">
+			<div class='container'>
+				<header>
+					<h1>Contact Michael</h1>
+				</header>
+				<div class='name'>
+					<input class='first' placeholder='First Name' type='text'>
+					<input class='last' placeholder='Last Name' type='text'>
+				</div>
+				<div class='contact'>
+					<input class='email' placeholder='E-mail Address' type='text'>
+				</div>
+				<div class='message'>
+					<textarea placeholder='Your Suggestions Here!'></textarea>
+				</div>
+				<footer>
+					<button>Send Email</button>
+				</footer>
+			</div>
+		</div>
+	</div>
 </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.js"></script>
+<script src="./assets/scripts/main.js"></script>
+<script>
+	$(".navToggle").on("click", function(){
+		$(this).toggleClass("open");
+		$("#menu").toggleClass("active");
+	})
+</script>
+
+
 </body>
 </html>
