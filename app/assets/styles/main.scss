@@ -3,16 +3,19 @@ body {
 	margin: 0;
 	font-size: .75em;
 }
+
 a {
 	cursor: pointer;
 	text-decoration: none;
 	font-size: 1.25em;
+	text-shadow: 1px 1px black;
 }
+
 .wrapper-bg {
 	display: flex;
 	width: 100vw;
 	justify-content: center;
-	height: 100%;
+	height: 100vh;
 	background: #303137;
 }
 
@@ -21,26 +24,20 @@ a {
 	height: 400px;
 }
 
-.logo-img {
-	display: flex;
-	width: 337px;
-	height: 225px;
-	margin-top: 40px;
-	color: white;
-}
-
 .logo-container {
-	order: 1;
 	background: #1d74bd;
 	justify-content: center;
 	width: 50%;
 }
-
 .main {
 	margin-top: 100px;
 	width: 75%;
 }
-
+.top-container {
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+}
 .portfolio-first {
 	display: flex;
 	width: 100%;
@@ -50,36 +47,168 @@ a {
 	background-position: center;
 	justify-content: center;
 	align-items: center;
-
-	& :hover {
-		background-color: black;
-		opacity: .5;
-		cursor: pointer;
+	cursor: pointer;
+	& .logo-img {
+		width: 337px;
+		height: 225px;
+		margin-top: 10px;
+		margin-left: 10px;
+		color: white;
+		position: absolute;
 	}
-	& :after {
-		transition: opacity 1s ease;
-		opacity: 0.5;
+	& .overlay {
+		background: rgba(0, 0, 0, .75);
+		text-align: center;
+		width: 100%;
+		height: 300px;
+		opacity: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		-webkit-transition: opacity .25s ease;
+		-moz-transition: opacity .25s ease;
+		left: 0;
+	}
+	& :hover .overlay {
+		opacity: 1;
+	}
+	& .plus {
+		font-family: Helvetica;
+		font-weight: 900;
+		color: rgba(255, 255, 255, .85);
+		font-size: 96px;
 	}
 }
-
+.first-it {
+	background: url('../img/hotpinkdonut.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 33.333%;
+	height: 400px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	& .overlay {
+		background: rgba(0, 0, 0, .75);
+		text-align: center;
+		width: 100%;
+		height: 400px;
+		opacity: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		-webkit-transition: opacity .25s ease;
+		-moz-transition: opacity .25s ease;
+		left: 0;
+	}
+	& .plus {
+		font-family: Helvetica;
+		font-weight: 900;
+		color: rgba(255, 255, 255, .85);
+		font-size: 96px;
+	}
+}
+.first-it:hover .overlay {
+	opacity: 1;
+}
+.portfolio-first:hover .overlay {
+	opacity: 1;
+}
+.second-it:hover .overlay {
+	opacity: 1;
+}
+.third-it:hover .overlay {
+	opacity: 1;
+}
+.second-it {
+	background: url('../img/donut-clicker-screen.png');
+	background-color: #ef794c;
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 33.333%;
+	height: 400px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	& .overlay {
+		background: rgba(0, 0, 0, .75);
+		text-align: center;
+		width: 100%;
+		height: 400px;
+		opacity: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		-webkit-transition: opacity .25s ease;
+		-moz-transition: opacity .25s ease;
+		left: 0;
+	}
+	& .plus {
+		font-family: Helvetica;
+		font-weight: 900;
+		color: rgba(255, 255, 255, .85);
+		font-size: 96px;
+	}
+}
+.third-it {
+	background-color: #4d403c;
+	background-image: url('../img/flappy-bird-screen.png');
+	background-size: contain;
+	background-position: center;
+	background-repeat: no-repeat;
+	width: 33.333%;
+	height: 400px;
+	text-align: center;
+	cursor: pointer;
+	overflow: hidden;
+	& .overlay {
+		background: rgba(0, 0, 0, .75);
+		text-align: center;
+		width: 100%;
+		height: 400px;
+		opacity: 0;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		-webkit-transition: opacity .25s ease;
+		-moz-transition: opacity .25s ease;
+		left: 0;
+	}
+	& .plus {
+		font-family: Helvetica;
+		font-weight: 900;
+		color: rgba(255, 255, 255, .85);
+		font-size: 96px;
+	}
+}
 .portfolio {
 	height: 500px;
 	width: 100%;
+	& .container {
+		width: 100%;
+		background: none;
+		border-radius: 0px;
+	}
 }
+
 .heading-span {
 	background: #1d74bd;
 	padding: 5px;
 }
+
 .about {
 	order: 2;
 	width: 50%;
 	height: 400px;
 }
+
 .about-container:after {
 	display: block;
 	position: absolute;
 	z-index: -1;
-	content : "";
+	content: "";
 	top: 0;
 	left: 0;
 	opacity: 0.5;
@@ -89,6 +218,7 @@ a {
 	-webkit-filter: grayscale(1); /* Old WebKit */
 	filter: grayscale(1);
 }
+
 .about-container {
 	background-image: url('../img/redrocks.jpg');
 	-webkit-background-size: cover;
@@ -100,6 +230,7 @@ a {
 	width: 50%;
 	height: 400px;
 }
+
 .resume {
 	margin-top: 100px;
 	height: 500px;
@@ -108,33 +239,10 @@ a {
 
 .grid {
 	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
 }
 
-.firs {
-	background: url('../img/hotpinkdonut.png');
-	background-size: contain;
-	background-position: center;
-	background-repeat: no-repeat;
-	order: 1;
-	flex: 1;
-	width: 100%;
-	height: 500px;
-	text-align: center;
-	margin-top: 20px;
-	cursor: pointer;
-}
-
-.first-item {
-	background-color: black;
-	cursor: pointer;
-	opacity: 0.5;
-	order: 1;
-	flex: 1;
-	width: 100%;
-	height: 500px;
-	text-align: center;
-	margin-top: 20px;
-}
 
 .second {
 	flex: 1;
@@ -173,10 +281,11 @@ a {
 	width: 600px;
 	margin: 2em auto;
 	overflow: hidden;
-	background: rgba(255,255,255,1);
+	background: rgba(255, 255, 255, 1);
 	border-radius: 5px;
 }
-.message, .contact, .name, .footer, header, textarea  {
+
+.message, .contact, .name, .footer, header, textarea {
 	display: block;
 	padding: 0;
 	margin: 0;
@@ -187,7 +296,7 @@ a {
 
 header {
 	height: 75px;
-	background: rgba(0,0,0,.05);
+	background: rgba(0, 0, 0, .05);
 	line-height: 75px;
 	padding-left: 20px;
 	border-radius: 5px 5px 0 0;
@@ -195,7 +304,7 @@ header {
 	h1 {
 		font-size: 1.2em;
 		text-transform: uppercase;
-		color: rgba(51,51,51,.4);
+		color: rgba(51, 51, 51, .4);
 	}
 }
 
@@ -204,7 +313,7 @@ header {
 	width: 278px;
 	margin: 0;
 	padding: 0 0 0 20px;
-	border: 1px solid rgba(0,0,0,.1);
+	border: 1px solid rgba(0, 0, 0, .1);
 	height: 50px;
 }
 
@@ -218,9 +327,9 @@ header {
 	width: 578px;
 	padding: 0 0 0 20px;
 	border-top: 0;
-	border-left: 1px solid rgba(0,0,0,.1);
-	border-right: 1px solid rgba(0,0,0,.1);
-	border-bottom: 1px solid rgba(0,0,0,.1);
+	border-left: 1px solid rgba(0, 0, 0, .1);
+	border-right: 1px solid rgba(0, 0, 0, .1);
+	border-bottom: 1px solid rgba(0, 0, 0, .1);
 }
 
 textarea {
@@ -232,25 +341,25 @@ textarea {
 footer {
 	@extend header;
 	height: 49px;
-	border-top: 1px dashed rgba(0,0,0,.3);
+	border-top: 1px dashed rgba(0, 0, 0, .3);
 	border-radius: 0 0 5px 5px;
 	padding-left: 0;
 	padding-right: 20px;
 
 	button {
 		height: 32px;
-		background: rgba(231, 76, 60,1.0);
+		background: rgba(231, 76, 60, 1.0);
 		border-radius: 5px;
 		border: 0;
 		margin: 7px 0;
-		color: rgba(255,255,255,1);
+		color: rgba(255, 255, 255, 1);
 		float: right;
 		padding: 0 20px 0 20px;
-		border-bottom: 3px solid rgba(192, 57, 43,1.0);
+		border-bottom: 3px solid rgba(192, 57, 43, 1.0);
 		transition: all linear .2s;
 
 		&:hover {
-			background: rgba(192, 57, 43,1.0);
+			background: rgba(192, 57, 43, 1.0);
 		}
 
 		&:focus {
@@ -261,8 +370,8 @@ footer {
 
 .first:focus, .last:focus, .email:focus, textarea:focus {
 	outline: none;
-	background: rgba(52, 152, 219,.1);
-	color: rgba(51,51,51,.7);
+	background: rgba(52, 152, 219, .1);
+	color: rgba(51, 51, 51, .7);
 }
 
 #fun2 {
@@ -270,19 +379,21 @@ footer {
 		transform: scale(1.2);
 	}
 }
+
 ul {
 	border-bottom: 1px solid #ccc;
 	list-style: none;
 	margin: 0 0 1.5rem 0;
 	padding: 0;
 }
+
 li {
 	background-image: linear-gradient(
 					to bottom,
 					transparent 50%,
-					rgba(162,211,156, 1) 50%,
-					rgba(162,211,156,1) 95%,
-					rgba(124,197,118,1) 95%
+					rgba(162, 211, 156, 1) 50%,
+					rgba(162, 211, 156, 1) 95%,
+					rgba(124, 197, 118, 1) 95%
 	);
 	background-size: 100% 200%;
 	background-position: top center;
@@ -293,7 +404,7 @@ li {
 	transition: all .25s ease-in-out;
 	&:hover {
 		background-position: bottom center;
-		color: rgba(0,0,0,.75);
+		color: rgba(0, 0, 0, .75);
 	}
 	& a {
 		color: #666;
@@ -302,7 +413,8 @@ li {
 		transition: all .25s ease-in-out;
 	}
 }
-.navToggle{
+
+.navToggle {
 	z-index: 111;
 	position: absolute;
 	width: 100px;
@@ -313,7 +425,7 @@ li {
 	top: 10px;
 	cursor: pointer;
 
-	.icon{
+	.icon {
 		-webkit-transition: all 0.4s ease-out;
 		position: absolute;
 		top: 40px;
@@ -323,59 +435,59 @@ li {
 		width: 50px;
 		height: 2px;
 		background-color: #333;
-		&:before, &:after{
+		&:before, &:after {
 			-webkit-transition: all 0.25s ease-out;
 			position: absolute;
 			width: 50px;
 			height: 2px;
 			background-color: #333;
-			content:'';
+			content: '';
 		}
-		&:before{
+		&:before {
 			top: -20px;
 			left: 0;
 		}
-		&:after{
+		&:after {
 			top: 20px;
 			left: 0;
 		}
 
 	}
-	&:hover{
-		.icon{
+	&:hover {
+		.icon {
 			background-color: #555;
-			&:before{
+			&:before {
 				top: -25px;
 				background-color: #555;
 			}
-			&:after{
+			&:after {
 				top: 25px;
-				background-color:#555;
+				background-color: #555;
 			}
 		}
 	}
-	&.open{
-		.icon{
+	&.open {
+		.icon {
 			-webkit-transition: all 0.4s ease-out;
 			background-color: transparent;
 			-webkit-transform: rotate(180deg);
-			&:before{
-				top:0;
+			&:before {
+				top: 0;
 				-webkit-transform: rotate(45deg);
 			}
-			&:after{
-				top:0;
+			&:after {
+				top: 0;
 				-webkit-transform: rotate(-45deg);
 			}
 		}
 	}
 }
 
-#menu{
+#menu {
 	z-index: 1;
 	left: 0;
 	right: 0;
-	top: 150px;
+	top: 100px;
 	margin: 0 auto;
 	position: absolute;
 	width: 200px;
@@ -384,23 +496,23 @@ li {
 	text-align: center;
 	-webkit-transition: all 0.5s;
 
-	& ul{
+	& ul {
 		list-style: none;
 		padding: 0;
 		font-family: sans-serif;
 		font-size: 1.25em;
 		font-weight: 100;
 	}
-	& li:first-child{
+	& li:first-child {
 		margin-top: 0;
 	}
 	& li {
 		background-image: linear-gradient(
 						to bottom,
 						transparent 50%,
-						rgba(68,140,203, 1) 50%,
-						rgba(68,140,203,1) 95%,
-						rgba(29,116,189,1) 95%
+						rgba(68, 140, 203, 1) 50%,
+						rgba(68, 140, 203, 1) 95%,
+						rgba(29, 116, 189, 1) 95%
 		);
 		flex: 1 1 auto;
 		& a:hover {
@@ -415,7 +527,7 @@ li {
 		transition: all .25s ease-in-out;
 		&:hover {
 			background-position: bottom center;
-			color: rgba(0,0,0,.75);
+			color: rgba(0, 0, 0, .75);
 		}
 		& a {
 			color: white;
@@ -424,16 +536,54 @@ li {
 			transition: all .25s ease-in-out;
 		}
 	}
-	&.active{
-		height:320px;
+	&.active {
+		height: 320px;
 		//border-bottom: 1px solid black;
 	}
 }
 
 @media all and (max-width: 640px) {
+	.top-container {
+		height: 520px;
+	}
+	.about-container {
+		height: 400px;
+		width: 100%;
+	}
+	.main {
+		margin-top: 0;
+		width: 100%;
+	}
+	.logo-container {
+		height: 120px;
+		width: 100%;
+	}
+	.main-container {
+		height: 200px;
+	}
 	.grid {
-		flex-flow: column wrap;
-		height: 500px;
+		height: 400px;
+	}
+	.second-it {
+		height: 200px;
+		width: 50%;
+		& .overlay {
+			height: 200px;
+		}
+	}
+	.third-it {
+		width: 50%;
+		height: 200px;
+		& .overlay {
+			height: 200px;
+		}
+	}
+	.first-it {
+		height: 200px;
+		width: 50%;
+		& .overlay {
+			height: 200px;
+		}
 	}
 	.second {
 		margin-top: 20px;
@@ -443,16 +593,13 @@ li {
 		margin-top: 20px;
 		flex-basis: 50%;
 	}
-	.wrapper-bg {
-		width: 100%;
-	}
-	.logo-img {
-		width: 252px;
-		height: 168px;
-
-	}
 	.portfolio-first {
-		margin-top: 100px;
+		margin-top: 320px;
+		& .logo-img {
+			width: 189px;
+			height: 126px;
+
+		}
 	}
 	.logo {
 		width: 80%;
@@ -463,11 +610,5 @@ li {
 	}
 	a {
 		font-size: 1em;
-	}
-	.logo-container {
-		width: 90%;
-	}
-	.about-container {
-		width: 90%;
 	}
 }

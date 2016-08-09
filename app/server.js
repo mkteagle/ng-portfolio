@@ -6,6 +6,7 @@
 	app.use(bodyParser.json());
 
 	app.use('/', express.static(__dirname + '/'));
+	app.use('/donutclicker', express.static(__dirname + '/donutclicker'));
 	app.use('/', express.static(__dirname));
 	var port = (process.env.PORT || 5000);
 

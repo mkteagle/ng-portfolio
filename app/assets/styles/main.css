@@ -8,6 +8,7 @@ a {
   cursor: pointer;
   text-decoration: none;
   font-size: 1.25em;
+  text-shadow: 1px 1px black;
 }
 
 .wrapper-bg {
@@ -16,7 +17,7 @@ a {
   width: 100vw;
   -ms-flex-pack: center;
       justify-content: center;
-  height: 100%;
+  height: 100vh;
   background: #303137;
 }
 
@@ -25,18 +26,7 @@ a {
   height: 400px;
 }
 
-.logo-img {
-  display: -ms-flexbox;
-  display: flex;
-  width: 337px;
-  height: 225px;
-  margin-top: 40px;
-  color: white;
-}
-
 .logo-container {
-  -ms-flex-order: 1;
-      order: 1;
   background: #1d74bd;
   -ms-flex-pack: center;
       justify-content: center;
@@ -46,6 +36,15 @@ a {
 .main {
   margin-top: 100px;
   width: 75%;
+}
+
+.top-container {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .portfolio-first {
@@ -60,20 +59,170 @@ a {
       justify-content: center;
   -ms-flex-align: center;
       align-items: center;
-}
-.portfolio-first :hover {
-  background-color: black;
-  opacity: .5;
   cursor: pointer;
 }
-.portfolio-first :after {
-  transition: opacity 1s ease;
-  opacity: 0.5;
+.portfolio-first .logo-img {
+  width: 337px;
+  height: 225px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  position: absolute;
+}
+.portfolio-first .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.portfolio-first :hover .overlay {
+  opacity: 1;
+}
+.portfolio-first .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.first-it {
+  background: url("../img/hotpinkdonut.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 33.333%;
+  height: 400px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.first-it .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.first-it .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.first-it:hover .overlay {
+  opacity: 1;
+}
+
+.portfolio-first:hover .overlay {
+  opacity: 1;
+}
+
+.second-it:hover .overlay {
+  opacity: 1;
+}
+
+.third-it:hover .overlay {
+  opacity: 1;
+}
+
+.second-it {
+  background: url("../img/donut-clicker-screen.png");
+  background-color: #ef794c;
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 33.333%;
+  height: 400px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.second-it .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.second-it .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.third-it {
+  background-color: #4d403c;
+  background-image: url("../img/flappy-bird-screen.png");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 33.333%;
+  height: 400px;
+  text-align: center;
+  cursor: pointer;
+  overflow: hidden;
+}
+.third-it .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 400px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.third-it .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
 }
 
 .portfolio {
   height: 500px;
   width: 100%;
+}
+.portfolio .container {
+  width: 100%;
+  background: none;
+  border-radius: 0px;
 }
 
 .heading-span {
@@ -123,31 +272,10 @@ a {
 .grid {
   display: -ms-flexbox;
   display: flex;
-}
-
-.firs {
-  background: url("../img/hotpinkdonut.png");
-  background-size: contain;
-  background-position: center;
-  background-repeat: no-repeat;
-  -ms-flex-order: 1;
-      order: 1;
-  -ms-flex: 1;
-      flex: 1;
-  width: 100%;
-  height: 500px;
-  text-align: center;
-  margin-top: 20px;
-}
-
-.first-item {
-  background-color: black;
-  cursor: pointer;
-  opacity: 0.5;
-  width: 100%;
-  height: 500px;
-  text-align: center;
-  margin-top: 20px;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .second {
@@ -377,7 +505,7 @@ li a {
   z-index: 1;
   left: 0;
   right: 0;
-  top: 150px;
+  top: 100px;
   margin: 0 auto;
   position: absolute;
   width: 200px;
@@ -426,10 +554,55 @@ li a {
 }
 
 @media all and (max-width: 640px) {
+  .top-container {
+    height: 520px;
+  }
+
+  .about-container {
+    height: 400px;
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .logo-container {
+    height: 120px;
+    width: 100%;
+  }
+
+  .main-container {
+    height: 200px;
+  }
+
   .grid {
-    -ms-flex-flow: column wrap;
-        flex-flow: column wrap;
-    height: 500px;
+    height: 400px;
+  }
+
+  .second-it {
+    height: 200px;
+    width: 50%;
+  }
+  .second-it .overlay {
+    height: 200px;
+  }
+
+  .third-it {
+    width: 50%;
+    height: 200px;
+  }
+  .third-it .overlay {
+    height: 200px;
+  }
+
+  .first-it {
+    height: 200px;
+    width: 50%;
+  }
+  .first-it .overlay {
+    height: 200px;
   }
 
   .second {
@@ -444,17 +617,12 @@ li a {
         flex-basis: 50%;
   }
 
-  .wrapper-bg {
-    width: 100%;
-  }
-
-  .logo-img {
-    width: 252px;
-    height: 168px;
-  }
-
   .portfolio-first {
-    margin-top: 100px;
+    margin-top: 320px;
+  }
+  .portfolio-first .logo-img {
+    width: 189px;
+    height: 126px;
   }
 
   .logo {
@@ -468,13 +636,5 @@ li a {
 
   a {
     font-size: 1em;
-  }
-
-  .logo-container {
-    width: 90%;
-  }
-
-  .about-container {
-    width: 90%;
   }
 }

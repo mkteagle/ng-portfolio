@@ -14,6 +14,7 @@
 		livereload = require('gulp-livereload'),
 		nodemon = require('gulp-nodemon'),
 		open = require('gulp-open'),
+		clean = require('gulp-clean'),
 		del = require('del');
 
 
@@ -56,59 +57,64 @@
 			.pipe(gulp.dest('public/'));
 	});
 	gulp.task('clean', function() {
-		return del(['public/assets/styles', 'public/assets/scripts', 'public/assets/img', 'public/']);
+		return del(['public/assets/styles', 'public/assets/scripts', 'public/assets/img', 'public/assets/thirdparty', 'public/donutclicker', 'public/assets/templates', 'public/assets/portfolio', 'public/']);
 	});
 
 	gulp.task('default', ['clean'], function() {
-		gulp.start('styles', 'scripts', 'images', 'html', 'serverjs', 'addcss');
+		gulp.start('styles', 'scripts', 'images', 'html', 'serverjs', 'addcss', 'thirdparty', 'donutclicker', 'templates');
 	});
 
 	gulp.task('serverjs', function() {
 		gulp.src('app/server.js')
 			.pipe(gulp.dest('./public'));
 	});
-
+	gulp.task('thirdparty', function(){
+		gulp.src(['app/assets/thirdparty/**/*'])
+			.pipe(gulp.dest('./public/assets/thirdparty'));
+	});
+	gulp.task('donutclicker', function(){
+		gulp.src(['app/donut-clicker/www/**/*'])
+			.pipe(gulp.dest('./public/donutclicker'));
+	});
+	gulp.task('templates', function(){
+		gulp.src(['app/assets/templates/**/*'])
+			.pipe(gulp.dest('./public/assets/templates'));
+		gulp.src(['app/assets/portfolio/**/*'])
+			.pipe(gulp.dest('./public/assets/portfolio'));
+	});
 	gulp.task('nodeman', [], function(){
 		nodemon({ script: 'public/server.js'
 			, ext: 'html js'
 			, ignore: ['ignored.js']
 			, tasks: [] })
 			.on('restart', function () {
-				console.log('restarted!')
 			});
 	});
-
-	gulp.task('develop', ['clean', 'styles', 'scripts', 'images','html', 'serverjs', 'addcss','nodeman'], function(){
-		var port = gutil.env.port || 3000;
-		var uiPort = gutil.env['ui-port'] || (port + 1);
-
-		browserSync.init({
-			proxy: "http://localhost:8080",
-			files: ["public/**/*.*"],
-			browser: "google chrome",
-			port: port,
-			ui: {
-				port: uiPort
-			}
-		});
+	gulp.task('delete', function () {
+		return gulp.src('public/', {read: false})
+			.pipe(clean());
 	});
 
-	gulp.task('watch', function() {
-
-		// Watch .scss files
-		gulp.watch('app/assets/styles/**/*.scss', ['styles']);
-
-		// Watch .js files
-		gulp.watch('app/assets/scripts/**/*.js', ['scripts']);
-
-		// Watch image files
-		gulp.watch('app/assets/img/**/*', ['images']);
-
-		// Create LiveReload server
-		livereload.listen();
-
-		// Watch any files in dist/, reload on change
-		gulp.watch(['public/**']).on('change', livereload.changed);
-
+	gulp.task('develop', ['clean', 'styles', 'scripts', 'images','html', 'thirdparty', 'donutclicker', 'templates', 'serverjs', 'addcss','nodeman'], function(){
 	});
+
+
+	// gulp.task('watch', function() {
+	//
+	// 	// Watch .scss files
+	// 	gulp.watch('app/assets/styles/**/*.scss', ['styles']);
+	//
+	// 	// Watch .js files
+	// 	gulp.watch('app/assets/scripts/**/*.js', ['scripts']);
+	//
+	// 	// Watch image files
+	// 	gulp.watch('app/assets/img/**/*', ['images']);
+	//
+	// 	// Create LiveReload server
+	// 	livereload.listen();
+	//
+	// 	// Watch any files in dist/, reload on change
+	// 	gulp.watch(['public/**']).on('change', livereload.changed);
+	//
+	// });
 })();

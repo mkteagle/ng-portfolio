@@ -4,6 +4,7 @@
     function ngController() {
     	var self = this;
 	    self.options = false;
+	    self.dud = false;
         
     }
 

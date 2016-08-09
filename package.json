@@ -24,6 +24,7 @@
     "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.5",
+    "gulp-clean": "^0.3.2",
     "gulp-concat": "^2.6.0",
     "gulp-cssnano": "^2.1.2",
     "gulp-imagemin": "^3.0.2",
@@ -36,9 +37,7 @@
     "gulp-ruby-sass": "^2.0.6",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.2",
-    "lite-server": "^2.2.0",
-    "typescript": "^1.8.10",
-    "typings": "^0.8.1"
+    "lite-server": "^2.2.0"
   },
   "main": "app.js",
   "description": ""
