@@ -15,9 +15,13 @@
 		nodemon = require('gulp-nodemon'),
 		open = require('gulp-open'),
 		clean = require('gulp-clean'),
+		supervisor = require('gulp-supervisor'),
 		del = require('del');
 
-
+	gulp.task('delete', function () {
+		return gulp.src('public/', {read: false})
+			.pipe(clean());
+	});
 	gulp.task('styles', function() {
 		return sass('app/assets/styles/main.scss', { style: 'expanded' })
 			.pipe(autoprefixer('last 2 version'))
@@ -53,20 +57,14 @@
 	});
 
 	gulp.task('html', function() {
-		return gulp.src('app/*.html')
+		gulp.src('app/*.html')
 			.pipe(gulp.dest('public/'));
-	});
-	gulp.task('clean', function() {
-		return del(['public/assets/styles', 'public/assets/scripts', 'public/assets/img', 'public/assets/thirdparty', 'public/donutclicker', 'public/assets/templates', 'public/assets/portfolio', 'public/']);
-	});
-
-	gulp.task('default', ['clean'], function() {
-		gulp.start('styles', 'scripts', 'images', 'html', 'serverjs', 'addcss', 'thirdparty', 'donutclicker', 'templates');
-	});
-
-	gulp.task('serverjs', function() {
-		gulp.src('app/server.js')
-			.pipe(gulp.dest('./public'));
+		gulp.src('app/*.js')
+			.pipe(gulp.dest('public/'));
+		gulp.src(['app/assets/templates/**/*'])
+			.pipe(gulp.dest('./public/assets/templates'));
+		gulp.src(['app/assets/portfolio/**/*'])
+			.pipe(gulp.dest('./public/assets/portfolio'));
 	});
 	gulp.task('thirdparty', function(){
 		gulp.src(['app/assets/thirdparty/**/*'])
@@ -76,26 +74,12 @@
 		gulp.src(['app/donut-clicker/www/**/*'])
 			.pipe(gulp.dest('./public/donutclicker'));
 	});
-	gulp.task('templates', function(){
-		gulp.src(['app/assets/templates/**/*'])
-			.pipe(gulp.dest('./public/assets/templates'));
-		gulp.src(['app/assets/portfolio/**/*'])
-			.pipe(gulp.dest('./public/assets/portfolio'));
-	});
-	gulp.task('nodeman', [], function(){
-		nodemon({ script: 'public/server.js'
-			, ext: 'html js'
-			, ignore: ['ignored.js']
-			, tasks: [] })
-			.on('restart', function () {
-			});
-	});
-	gulp.task('delete', function () {
-		return gulp.src('public/', {read: false})
-			.pipe(clean());
+	gulp.task('deploy', gulp.series('delete', 'thirdparty', 'html', 'scripts', 'styles', 'images', 'donutclicker', 'addcss'), function() {
+		supervisor('public/server.js');
 	});
 
-	gulp.task('develop', ['clean', 'styles', 'scripts', 'images','html', 'thirdparty', 'donutclicker', 'templates', 'serverjs', 'addcss','nodeman'], function(){
+	gulp.task('develop', gulp.series('delete', 'styles', 'scripts', 'images', 'html', 'thirdparty', 'donutclicker', 'addcss'), function(){
+		supervisor('public/server.js');
 	});
 
 
