@@ -21,7 +21,7 @@
     "browser-sync": "^2.14.0",
     "concurrently": "^2.0.0",
     "del": "^2.2.1",
-    "gulp": "github:gulpjs/gulp#4.0",
+    "gulp": "^3.9.1",
     "gulp-autoprefixer": "^3.1.0",
     "gulp-cache": "^0.4.5",
     "gulp-clean": "^0.3.2",
@@ -30,6 +30,7 @@
     "gulp-imagemin": "^3.0.2",
     "gulp-jshint": "^2.0.1",
     "gulp-livereload": "^3.8.1",
+    "gulp-minify-css": "^1.2.4",
     "gulp-nodemon": "^2.1.0",
     "gulp-notify": "^2.2.0",
     "gulp-open": "^2.0.0",
@@ -38,7 +39,8 @@
     "gulp-supervisor": "^0.1.2",
     "gulp-uglify": "^2.0.0",
     "jshint": "^2.9.2",
-    "lite-server": "^2.2.0"
+    "lite-server": "^2.2.0",
+    "tiny-lr": "^0.2.1"
   },
   "main": "app.js",
   "description": ""
