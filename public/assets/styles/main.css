@@ -89,6 +89,7 @@ a {
 
 .messages {
   width: 100%;
+  box-sizing: border-box;
   outline: 0;
   background: transparent;
   font-size: 1.5em;
@@ -400,7 +401,7 @@ a {
   border-radius: 5px;
 }
 
-.message, .contact, .name, .footer, header, footer, textarea {
+.message, .contact, .name, .footer, header, textarea {
   display: block;
   padding: 0;
   margin: 0;
@@ -409,14 +410,14 @@ a {
   overflow: hidden;
 }
 
-header, footer {
+header {
   height: 75px;
   background: rgba(0, 0, 0, 0.05);
   line-height: 75px;
   padding-left: 20px;
   border-radius: 5px 5px 0 0;
 }
-header h1, footer h1 {
+header h1 {
   font-size: 1.2em;
   text-transform: uppercase;
   color: rgba(51, 51, 51, 0.4);
@@ -434,85 +435,6 @@ header h1, footer h1 {
 .last {
   width: 279px;
   border-left: 0;
-}
-
-.email, textarea {
-  height: 50px;
-  width: 578px;
-  padding: 0 0 0 20px;
-  border-top: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-}
-
-textarea {
-  padding-top: 10px;
-  height: 200px;
-}
-
-footer {
-  height: 49px;
-  border-top: 1px dashed rgba(0, 0, 0, 0.3);
-  border-radius: 0 0 5px 5px;
-  padding-left: 0;
-  padding-right: 20px;
-}
-footer button {
-  height: 32px;
-  background: #e74c3c;
-  border-radius: 5px;
-  border: 0;
-  margin: 7px 0;
-  color: white;
-  float: right;
-  padding: 0 20px 0 20px;
-  border-bottom: 3px solid #c0392b;
-  transition: all linear .2s;
-}
-footer button:hover {
-  background: #c0392b;
-}
-footer button:focus {
-  outline: none;
-}
-
-.first:focus, .last:focus, .email:focus, textarea:focus, textarea:focus {
-  outline: none;
-  background: rgba(52, 152, 219, 0.1);
-  color: rgba(51, 51, 51, 0.7);
-}
-
-#fun2 li:hover {
-  transform: scale(1.2);
-}
-
-ul {
-  border-bottom: 1px solid #ccc;
-  list-style: none;
-  margin: 0 0 1.5rem 0;
-  padding: 0;
-}
-
-li {
-  background-image: linear-gradient(to bottom, transparent 50%, #a2d39c 50%, #a2d39c 95%, #7cc576 95%);
-  background-size: 100% 200%;
-  background-position: top center;
-  color: #666;
-  display: block;
-  text-align: center;
-  text-decoration: none;
-  transition: all .25s ease-in-out;
-}
-li:hover {
-  background-position: bottom center;
-  color: rgba(0, 0, 0, 0.75);
-}
-li a {
-  color: #666;
-  display: block;
-  padding: 1rem 0;
-  transition: all .25s ease-in-out;
 }
 
 .navToggle {
@@ -713,5 +635,13 @@ li a {
 
   a {
     font-size: 1em;
+  }
+
+  .uiview {
+    width: 100%;
+  }
+
+  .contactme {
+    margin-top: 320px;
   }
 }
