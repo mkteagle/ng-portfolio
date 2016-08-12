@@ -8,12 +8,15 @@
 	<link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body ng-app="ngPortfolio">
-<div class="wrapper-bg">
-	<div class="main" ng-controller="ngController as nc">
-		<div ng-include="'assets/templates/menu.html'"></div>
-		<div ui-view></div>
+<div class="wrapit">
+	<div class="uiview">
+		<div class="main" ng-controller="ngController as nc">
+			<div ng-include="'assets/templates/menu.html'"></div>
+			<div ui-view></div>
+		</div>
 	</div>
 </div>
+<div class="footer">This is my footer</div>
 <script src="./assets/thirdparty/jquery/dist/jquery.js"></script>
 <script src="./assets/thirdparty/angular/angular.js"></script>
 <script src="./assets/thirdparty/angular-ui-router/release/angular-ui-router.js"></script>
