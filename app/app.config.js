@@ -2,9 +2,9 @@
     angular.module('ngPortfolio.config', [])
 		.config(configureRouter);
 
-	configureRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
+	configureRouter.$inject = ['$stateProvider', '$urlRouterProvider', '$locationProvider'];
 
-		function configureRouter ($stateProvider, $urlRouterProvider) {
+		function configureRouter ($stateProvider, $urlRouterProvider, $locationProvider) {
 			$urlRouterProvider.otherwise("/home");
 			$stateProvider
 				.state("home", {
@@ -35,5 +35,6 @@
 					url:"/portfolio/flappy-bird",
 					templateUrl: "../assets/portfolio/flappy-bird.html"
 				});
+			$locationProvider.html5Mode(true);
 	}
 }());
