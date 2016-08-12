@@ -1,0 +1,30 @@
+<div class="row">
+		<div class="main-container">
+			<div class="top-container">
+				<div class="logo-container">
+					<div class="logo">
+						<object type="image/svg+xml" data="assets/img/MT5.svg"></object>
+					</div>
+				</div>
+				<div class="about-container">
+					<div class="navToggle open">
+						<div class="icon"></div>
+					</div>
+					<div class="active" id="menu">
+						<ul>
+							<li><a ui-sref="home" title="Work">Work</a></li>
+							<li><a ui-sref="resume" title="Resume">Resume</a></li>
+							<li><a ui-sref="contact" title="Contact">About/Contact</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+</div>
+<script src="../assets/thirdparty/jquery/dist/jquery.js"></script>
+<script>
+$(".navToggle").on("click", function () {
+$(this).toggleClass("open");
+$("#menu").toggleClass("active");
+})
+</script>

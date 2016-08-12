@@ -2,6 +2,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   margin: 0;
   font-size: .75em;
+  background: #303137;
 }
 
 a {
@@ -18,6 +19,7 @@ a {
   -ms-flex-pack: center;
       justify-content: center;
   height: 100vh;
+  position: relative;
   background: #303137;
 }
 
@@ -96,7 +98,8 @@ a {
 }
 
 .first-it {
-  background: url("../img/hotpinkdonut.png");
+  background: url("../img/xactware-externship.png");
+  background-color: #069EEF;
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

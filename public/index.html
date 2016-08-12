@@ -7,12 +7,17 @@
 	<link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body ng-app="ngPortfolio">
-		<div class="wrapper-bg" ui-view></div>
-		<script src="./assets/thirdparty/jquery/dist/jquery.js"></script>
-		<script src="./assets/thirdparty/angular/angular.js"></script>
-		<script src="./assets/thirdparty/angular-ui-router/release/angular-ui-router.js"></script>
-		<script src="app.config.js"></script>
-		<script src="app.module.js"></script>
-		<script src="./assets/scripts/main.js"></script>
+<div class="wrapper-bg">
+	<div class="main" ng-controller="ngController as nc">
+		<div ng-include="'assets/templates/menu.html'"></div>
+		<div ui-view></div>
+	</div>
+</div>
+<script src="./assets/thirdparty/jquery/dist/jquery.js"></script>
+<script src="./assets/thirdparty/angular/angular.js"></script>
+<script src="./assets/thirdparty/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="app.config.js"></script>
+<script src="app.module.js"></script>
+<script src="./assets/scripts/main.js"></script>
 </body>
 </html>

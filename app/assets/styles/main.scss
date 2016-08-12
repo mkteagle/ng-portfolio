@@ -2,6 +2,7 @@ body {
 	font-family: 'Open Sans', sans-serif;
 	margin: 0;
 	font-size: .75em;
+	background: #303137;
 }
 
 a {
@@ -16,6 +17,7 @@ a {
 	width: 100vw;
 	justify-content: center;
 	height: 100vh;
+	position: relative;
 	background: #303137;
 }
 
@@ -69,6 +71,9 @@ a {
 		-moz-transition: opacity .25s ease;
 		left: 0;
 	}
+	& :hover {
+
+	}
 	& :hover .overlay {
 		opacity: 1;
 	}
@@ -80,7 +85,8 @@ a {
 	}
 }
 .first-it {
-	background: url('../img/hotpinkdonut.png');
+	background: url('../img/xactware-externship.png');
+	background-color: #069EEF;
 	background-size: contain;
 	background-position: center;
 	background-repeat: no-repeat;
