@@ -27,35 +27,24 @@ a {
 }
 .names {
 	display: flex;
-	width: 75%;
+	width: 100%;
 	flex-direction: row;
 	color: white;
-	font-size: 1.5em;
 }
 .first_name {
 	border: 0;
 	outline: 0;
 	background: transparent;
 	border-bottom: 2px solid white;
-	width: 50%;
+	width: 100%;
 	color: white;
-	font-size: 1.5em;
-}
-.last_name {
-	border: 0;
-	outline: 0;
-	background: transparent;
-	border-bottom: 2px solid white;
-	width: 50%;
-	color: white;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 .emailadd {
 	display: flex;
 	width: 100%;
 	flex-direction: row;
 	color: white;
-	font-size: 1.5em;
 	margin-top: 25px;
 }
 .email_address {
@@ -65,7 +54,7 @@ a {
 	border-bottom: 2px solid white;
 	width: 100%;
 	color: white;
-	font-size: 1.5em;
+	font-size: 1em;
 }
 .contactme {
 	margin-top: 100px;
@@ -77,7 +66,7 @@ a {
 	box-sizing: border-box;
 	outline: 0;
 	background: transparent;
-	font-size: 1.5em;
+	font-size: 1em;
 	color: white;
 	margin-top: 20px;
 }
@@ -92,6 +81,21 @@ a {
 	background: #1d74bd;
 	justify-content: center;
 	width: 50%;
+}
+.button {
+	border: 0;
+	background-color: black;
+	color: white;
+	padding: 10px;
+	font-size: 1em;
+	width: 66px;
+	height: 20px;
+	text-align: center;
+	cursor: pointer;
+}
+.button:active {
+	background-color: white;
+	color: black;
 }
 .main {
 	margin-top: 100px;
@@ -311,7 +315,6 @@ a {
 	flex-wrap: wrap;
 	flex-direction: row;
 }
-
 
 .second {
 	flex: 1;
