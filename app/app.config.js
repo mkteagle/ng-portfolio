@@ -13,7 +13,8 @@
 				})
 				.state("contact", {
 					url: "/contact",
-					templateUrl: "../assets/templates/contact.html"
+					templateUrl: "../assets/templates/contact.html",
+					controller: "ngController as nc"
 				})
 				.state("resume", {
 					url: "/resume",
