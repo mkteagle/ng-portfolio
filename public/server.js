@@ -33,7 +33,7 @@
 		var mailOptions = {
 			from: '"Site Email 👥" <'+ req.body.email + '>', // sender address
 			to: 'sayhello@mkteagle.com', // list of receivers
-			subject: 'Hello from ' + req.body.name, // Subject line
+			subject: 'Hello from' + req.body.name, // Subject line
 			text: 'Message: ' + req.body.content
 		};
 

@@ -1,10 +1,12 @@
 <div class="contactme">
+	<form name="name">
 	<div class="names">
-		<input class="first_name" ng-model="nc.name" placeholder="Your Name" type="text">
+		<input class="first_name" ng-model="nc.name" placeholder="Your Name" type="text" ng-required="required">
 	</div>
 	<div class="emailadd">
-		<input class="email_address" placeholder="Email Address" ng-model="nc.email" type="email">
+		<input class="email_address" placeholder="Email Address" ng-model="nc.email" type="email" ng-required="required">
 	</div>
-		<textarea class="messages" placeholder="Please type your messages here" ng-model="nc.content"></textarea>
-	<div class="button" ng-click="nc.post()">Send Email</div>
+		<textarea class="messages" placeholder="Please type your messages here" ng-model="nc.content" ng-required="required"></textarea>
+	<input type ="submit" class="button" ng-click="nc.post()">Send Email</div>
+	</form>
 </div>
