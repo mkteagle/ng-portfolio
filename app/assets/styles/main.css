@@ -58,7 +58,7 @@ a {
   -ms-flex-direction: row;
       flex-direction: row;
   color: white;
-  margin-top: 25px;
+  margin-top: 18px;
 }
 
 .email_address {
@@ -74,6 +74,9 @@ a {
 .contactme {
   margin-top: 100px;
 }
+.contactme h2 {
+  color: #1d74bd;
+}
 
 .messages {
   width: 100%;
@@ -82,12 +85,14 @@ a {
   background: transparent;
   font-size: 1em;
   color: white;
-  margin-top: 20px;
+  margin-top: 18px;
 }
 
 .footer {
   height: 300px;
-  background-color: white;
+  background: url("../img/overlay_img_small.png");
+  background-size: cover;
+  background-postion: center;
 }
 
 .logo-container {
@@ -555,6 +560,25 @@ header h1 {
 }
 #menu.active {
   height: 320px;
+}
+
+.doingutahdaily {
+  background-color: white;
+  display: -ms-flexbox;
+  display: flex;
+  height: 800px;
+}
+.doingutahdaily .column1 {
+  width: 45%;
+  height: 800px;
+}
+.doingutahdaily .column2 {
+  width: 45%;
+  height: 800px;
+}
+
+.padding {
+  padding: 10px;
 }
 
 @media all and (max-width: 640px) {

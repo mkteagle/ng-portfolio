@@ -1,4 +1,5 @@
 <div class="contactme">
+	<h2>Contact Me</h2>
 	<form name="name">
 	<div class="names">
 		<input class="first_name" ng-model="nc.name" placeholder="Your Name" type="text" ng-required="required">
@@ -7,6 +8,6 @@
 		<input class="email_address" placeholder="Email Address" ng-model="nc.email" type="email" ng-required="required">
 	</div>
 		<textarea class="messages" placeholder="Please type your messages here" ng-model="nc.content" ng-required="required"></textarea>
-	<input type ="submit" class="button" ng-click="nc.post()">Send Email</div>
+	<div class="button" name="Send Email" ng-click="nc.post()">Send Email </div>
 	</form>
 </div>
