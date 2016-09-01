@@ -5,6 +5,7 @@
 	<base href="/">
 	<title>Michael Teagle's Portfolio</title>
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" href="assets/styles/main.css">
 </head>
 <body ng-app="ngPortfolio">
@@ -17,18 +18,35 @@
 	</div>
 </div>
 <div class="footer">
-	<div class="contains">
-        <div class="social">
-            <ul>
-                <li>facebook</li>
-                <li>instagram</li>
-                <li>linkedin</li>
-                <li>github</li>
-            </ul>
+    <div class="footer-cont">
+    <div class="footer-grid">
+        <div class="one">
+                <img src="./assets/img/profile-pic.jpg" class="img-circle">
         </div>
-        <div class="bottom">
-            I am a front-end developer ready to start on your next project.
+        <div class="two">
+            <div class="text">
+                Hello my name is Mike, and you can hire me for your next project
+                <div>email: <a href="mailto:sayhello@mkteagle.com">sayhello@mkteagle.com</a></div>
+                <div>mobile: 801.683.9129</div>
+                <div class="social">
+                    <ul>
+                        <li class="padding"><a href="http://facebook.com/mkteagle"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+                        <li class="padding"><a href="http://instagram.com/mkteagle"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
+                        <li class="padding"><a href="http://linkedin.com/in/mkteagle"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+                        <li class="padding"><a href="http://github.com/mkteagle"><i class="fa fa-github-alt" aria-hidden="true"></i></a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
+        <div class="three">
+            <div class="linkser">
+                <ul>
+                    <li><a ui-sref="home">Work</a></li>
+                    <li><a ui-sref="contact">About/Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
     </div>
 </div>
 <div class="beyond">

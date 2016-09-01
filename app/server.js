@@ -11,11 +11,6 @@
 	app.use('/', express.static(__dirname));
 	var port = (process.env.PORT || 5000);
 
-	var firebase = require("firebase");
-	// firebase.initializeApp({
-	// 	serviceAccount: "app/assets/doingutahdaily-07027debc6a3.json",
-	// 	databaseURL: "https://doingutahdaily.firebaseio.com"
-	// });
 	app.post('/api/contact', function(req, res){
 
 	});
@@ -33,8 +28,8 @@
 		var mailOptions = {
 			from: '"Site Email 👥" <'+ req.body.email + '>', // sender address
 			to: 'sayhello@mkteagle.com', // list of receivers
-			subject: 'Hello from' + req.body.name, // Subject line
-			text: 'Message: ' + req.body.content
+			subject: 'Hello from ' + req.body.name, // Subject line
+			text: 'Message: ' + req.body.content + "<br/> email: " + req.body.email
 		};
 
 // send mail with defined transport object
@@ -45,10 +40,12 @@
 			console.log('Message sent: ' + info.response);
 		});
 
-		res.send(true);
-	});
-// setup e-mail data with unicode symbols
 
+	res.send(true);
+});
+app.get('*', function (req, res){
+	res.sendFile(__dirname + '/index.html');
+});
 
 
 })();

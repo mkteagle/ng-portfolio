@@ -66,25 +66,26 @@
 			.pipe(clean());
 	});
 	gulp.task('develop', ['html','nodeman'], function(){
+		
 	});
 
 
-	// gulp.task('watch', function() {
-	//
-	// 	// Watch .scss files
-	// 	gulp.watch('app/assets/styles/**/*.scss', ['styles']);
-	//
-	// 	// Watch .js files
-	// 	gulp.watch('app/assets/scripts/**/*.js', ['scripts']);
-	//
-	// 	// Watch image files
-	// 	gulp.watch('app/assets/img/**/*', ['images']);
-	//
-	// 	// Create LiveReload server
-	// 	livereload.listen();
-	//
-	// 	// Watch any files in dist/, reload on change
-	// 	gulp.watch(['public/**']).on('change', livereload.changed);
-	//
-	// });
+	gulp.task('watch', function() {
+	
+		// Watch .scss files
+		gulp.watch('app/assets/styles/**/*.scss');
+	
+		// Watch .js files
+		gulp.watch('app/assets/scripts/**/*.js');
+	
+		// Watch image files
+		gulp.watch('app/assets/img/**/*');
+	
+		// Create LiveReload server
+		livereload.listen();
+	
+		// Watch any files in dist/, reload on change
+		gulp.watch(['public/**']).on('change', livereload.changed);
+	
+	});
 })();

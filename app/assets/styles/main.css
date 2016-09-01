@@ -80,6 +80,135 @@ a {
   color: #1d74bd;
 }
 
+.bio {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  background: white;
+  width: 100%;
+  height: 800px;
+  -ms-flex-align: end;
+      align-items: flex-end;
+}
+.bio .first-column {
+  margin-top: 50px;
+  width: 90%;
+  height: 700px;
+}
+
+.footer-cont {
+  width: 75%;
+}
+
+.one {
+  display: -ms-flexbox;
+  display: flex;
+  width: 33.333%;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.two {
+  color: white;
+  font-size: 1.25em;
+  width: 33.333%;
+  z-index: 1000;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.two .text {
+  height: 200px;
+}
+.two .text a {
+  color: #1d74bd;
+  text-decoration: none;
+}
+.two .text a:hover {
+  color: gray !important;
+}
+.two .social {
+  width: 200px;
+}
+.two .social ul {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+.two .social li {
+  float: left;
+}
+.two .social li a {
+  color: #1d74bd;
+}
+.two .social li a :hover {
+  color: gray;
+}
+.two .social .padding {
+  padding-top: 0;
+  padding-left: 5px;
+}
+
+.three {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 33.333%;
+}
+.three ul {
+  list-style: none;
+  padding: 0;
+  font-weight: 100;
+}
+.three li:first-child {
+  margin-top: 0;
+}
+.three li {
+  background-image: linear-gradient(to bottom, transparent 50%, #448ccb 50%, #448ccb 95%, #1d74bd 95%);
+  -ms-flex: 1 1;
+      flex: 1 1;
+  background-size: 100% 200%;
+  background-position: top center;
+  color: white;
+  display: block;
+  text-decoration: none;
+  transition: all .25s ease-in-out;
+}
+.three li a:hover {
+  color: #eee;
+}
+.three li:hover {
+  background-position: bottom center;
+  color: rgba(0, 0, 0, 0.75);
+}
+.three li a {
+  color: white;
+  display: block;
+  padding: 1rem 0;
+  transition: all .25s ease-in-out;
+}
+.three.active {
+  height: 320px;
+}
+.three.linkser {
+  height: 50px;
+  color: white;
+  font-size: 1.25em;
+}
+
 .messages {
   width: 100%;
   box-sizing: border-box;
@@ -100,9 +229,9 @@ a {
   display: flex;
   -ms-flex-direction: column;
       flex-direction: column;
+  width: 100%;
   -ms-flex-align: center;
       align-items: center;
-  width: 100%;
 }
 
 .beyond {
@@ -131,21 +260,6 @@ a {
   width: 100%;
   height: 30px;
   margin-top: 20px;
-}
-.contains .bottom {
-  margin-top: 150px;
-  width: 200px;
-  font-size: 1.5em;
-}
-.contains .social {
-  width: 300px;
-}
-.contains .social ul {
-  list-style: none;
-  overflow: hidden;
-}
-.contains .social li {
-  float: left;
 }
 
 .logo-container {
@@ -429,6 +543,16 @@ a {
       flex-direction: row;
 }
 
+.footer-grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 300px;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
 .second {
   -ms-flex: 1;
       flex: 1;
@@ -474,40 +598,13 @@ a {
   border-radius: 5px;
 }
 
-.message, .contact, .name, header, textarea {
+.message, textarea {
   display: block;
   padding: 0;
   margin: 0;
   border: 0;
   clear: both;
   overflow: hidden;
-}
-
-header {
-  height: 75px;
-  background: rgba(0, 0, 0, 0.05);
-  line-height: 75px;
-  padding-left: 20px;
-  border-radius: 5px 5px 0 0;
-}
-header h1 {
-  font-size: 1.2em;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.4);
-}
-
-.first, .last {
-  float: left;
-  width: 278px;
-  margin: 0;
-  padding: 0 0 0 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 50px;
-}
-
-.last {
-  width: 279px;
-  border-left: 0;
 }
 
 .navToggle {
@@ -739,4 +836,31 @@ header h1 {
   .contactme {
     margin-top: 320px;
   }
+
+  .three {
+    display: none;
+  }
+}
+.bio-row {
+  width: 100%;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.elevencolumn {
+  width: 25%;
+}
+
+.twelvecolumn {
+  width: 75%;
+}
+
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
 }
