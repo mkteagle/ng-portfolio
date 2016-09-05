@@ -332,6 +332,150 @@ h4 a:hover {
       flex-direction: row;
 }
 
+.heading {
+  font-size: 3em;
+  color: white;
+}
+
+.donut-clicker-top {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #ef794c;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.donut-clicker-top .logo-img {
+  width: 337px;
+  height: 225px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  position: absolute;
+}
+.donut-clicker-top .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.donut-clicker-top :hover .overlay {
+  opacity: 1;
+}
+.donut-clicker-top .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.flappy-bird-top {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #4d403c;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.flappy-bird-top .logo-img {
+  width: 337px;
+  height: 225px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  position: absolute;
+}
+.flappy-bird-top .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.flappy-bird-top :hover .overlay {
+  opacity: 1;
+}
+.flappy-bird-top .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.xactware-top {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #069EEF;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.xactware-top .logo-img {
+  width: 337px;
+  height: 225px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  position: absolute;
+}
+.xactware-top .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.xactware-top :hover .overlay {
+  opacity: 1;
+}
+.xactware-top .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.no-cursor {
+  cursor: default !important;
+}
+
 .portfolio-first {
   display: -ms-flexbox;
   display: flex;
@@ -777,18 +921,57 @@ h4 a:hover {
 }
 
 .xactware {
-  height: 700px;
+  height: 850px;
+  display: -ms-flexbox;
+  display: flex;
   background: white;
+}
+.xactware .column1 {
+  width: 50%;
+  height: 650px;
+}
+.xactware .column1 ul {
+  list-style-type: none;
+}
+.xactware .column2 {
+  width: 50%;
+  height: 659px;
 }
 
 .donut-clicker {
-  height: 700px;
+  height: 1100px;
+  display: -ms-flexbox;
+  display: flex;
   background: white;
+}
+.donut-clicker .column1 {
+  width: 50%;
+  height: 650px;
+}
+.donut-clicker .column1 ul {
+  list-style-type: none;
+}
+.donut-clicker .column2 {
+  width: 50%;
+  height: 659px;
 }
 
 .flappy-bird {
-  height: 700px;
+  height: 1400px;
   background: white;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flappy-bird .column1 {
+  width: 50%;
+  height: 650px;
+}
+.flappy-bird .column1 ul {
+  list-style-type: none;
+}
+.flappy-bird .column2 {
+  width: 50%;
+  height: 1400px;
 }
 
 @media all and (max-width: 640px) {
@@ -869,6 +1052,10 @@ h4 a:hover {
     margin-top: -20px;
   }
 
+  .bio {
+    margin-top: 320px;
+  }
+
   a {
     font-size: 1em;
   }
@@ -878,7 +1065,7 @@ h4 a:hover {
   }
 
   .contactme {
-    margin-top: 320px;
+    margin-top: 50px;
   }
 
   .three {
@@ -887,6 +1074,22 @@ h4 a:hover {
 
   .aclass {
     width: 50%;
+  }
+
+  .one {
+    width: 100%;
+  }
+
+  .two {
+    width: 100%;
+  }
+
+  .flappy-bird {
+    height: 550px;
+  }
+  .flappy-birdcolumn2 {
+    margin-top: 20px;
+    height: 550px;
   }
 }
 .bio-row {

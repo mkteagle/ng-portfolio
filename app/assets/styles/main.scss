@@ -4,13 +4,6 @@ body {
   font-size: .75em;
   background: #303137;
 }
-
-//a {
-//  cursor: pointer;
-//  text-decoration: none;
-//  font-size: 1.25em;
-//  text-shadow: 1px 1px black;
-//}
 h4 {
   font-size: 1.1em;
   & a {
@@ -306,7 +299,127 @@ h4 {
   flex-wrap: wrap;
   flex-direction: row;
 }
-
+.heading {
+  font-size: 3em;
+  color: white;
+}
+.donut-clicker-top {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #ef794c;
+  justify-content: center;
+  align-items: center;
+  .logo-img {
+    width: 337px;
+    height: 225px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    position: absolute;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, .75);
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+    left: 0;
+  }
+  & :hover .overlay {
+    opacity: 1;
+  }
+  .plus {
+    font-family: Helvetica;
+    font-weight: 900;
+    color: rgba(255, 255, 255, .85);
+    font-size: 96px;
+  }
+}
+.flappy-bird-top {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #4d403c;
+  justify-content: center;
+  align-items: center;
+  .logo-img {
+    width: 337px;
+    height: 225px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    position: absolute;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, .75);
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+    left: 0;
+  }
+  & :hover .overlay {
+    opacity: 1;
+  }
+  .plus {
+    font-family: Helvetica;
+    font-weight: 900;
+    color: rgba(255, 255, 255, .85);
+    font-size: 96px;
+  }
+}
+.xactware-top {
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #069EEF;
+  justify-content: center;
+  align-items: center;
+  .logo-img {
+    width: 337px;
+    height: 225px;
+    margin-top: 10px;
+    margin-left: 10px;
+    color: white;
+    position: absolute;
+  }
+  .overlay {
+    background: rgba(0, 0, 0, .75);
+    text-align: center;
+    width: 100%;
+    height: 300px;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    -webkit-transition: opacity .25s ease;
+    -moz-transition: opacity .25s ease;
+    left: 0;
+  }
+  & :hover .overlay {
+    opacity: 1;
+  }
+  .plus {
+    font-family: Helvetica;
+    font-weight: 900;
+    color: rgba(255, 255, 255, .85);
+    font-size: 96px;
+  }
+}
+.no-cursor {
+  cursor: default !important;
+}
 .portfolio-first {
   display: flex;
   width: 100%;
@@ -737,16 +850,52 @@ h4 {
   padding: 10px;
 }
 .xactware {
-  height: 700px;
+  height: 850px;
+  display: flex;
   background: white;
+  .column1 {
+    width: 50%;
+    height: 650px;
+    ul {
+      list-style-type: none;
+    }
+  }
+  .column2 {
+    width: 50%;
+    height: 659px;
+  }
 }
 .donut-clicker {
-  height: 700px;
+  height: 1100px;
+  display: flex;
   background: white;
+  .column1 {
+    width: 50%;
+    height: 650px;
+    ul {
+      list-style-type: none;
+    }
+  }
+  .column2 {
+    width: 50%;
+    height: 659px;
+  }
 }
 .flappy-bird {
-  height: 700px;
+  height: 1400px;
   background: white;
+  display: flex;
+  .column1 {
+    width: 50%;
+    height: 650px;
+    ul {
+      list-style-type: none;
+    }
+  }
+  .column2 {
+    width: 50%;
+    height: 1400px;
+  }
 }
 
 
@@ -813,6 +962,9 @@ h4 {
   #menu {
     margin-top: -20px;
   }
+  .bio {
+    margin-top: 320px;
+  }
   a {
     font-size: 1em;
   }
@@ -820,13 +972,26 @@ h4 {
     width: 100%;
   }
   .contactme {
-    margin-top: 320px;
+    margin-top: 50px;
   }
   .three {
     display: none;
   }
   .aclass {
     width: 50%;
+  }
+  .one {
+    width: 100%;
+  }
+  .two {
+    width: 100%;
+  }
+  .flappy-bird {
+    height: 550px;
+    &column2 {
+      margin-top: 20px;
+      height: 550px;
+    }
   }
 }
 

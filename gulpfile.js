@@ -19,6 +19,8 @@
 	gulp.task('html', ['delete'], function() {
 		gulp.src(['app/donut-clicker/www/**/*'])
 			.pipe(gulp.dest('./public/donutclicker'));
+		gulp.src(['app/flappy/**/*'])
+			.pipe(gulp.dest('./public/flappy'));
 		gulp.src(['app/assets/thirdparty/**/*'])
 			.pipe(gulp.dest('./public/assets/thirdparty'));
 		sass('app/assets/styles/main.scss', { style: 'expanded' })
