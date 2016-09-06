@@ -5,6 +5,20 @@ body {
   background: #303137;
 }
 
+a.svg {
+  position: relative;
+  display: inline-block;
+}
+
+a.svg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
 h4 {
   font-size: 1.1em;
 }
@@ -33,7 +47,7 @@ h4 a:hover {
 }
 
 .capable {
-  height: 100px;
+  height: 150px;
 }
 
 .wrapit {
@@ -104,7 +118,7 @@ h4 a:hover {
       flex-direction: column;
   background: white;
   width: 100%;
-  height: 700px;
+  height: 500px;
   -ms-flex-align: end;
       align-items: flex-end;
 }
@@ -1115,3 +1129,263 @@ h4 a:hover {
   height: 150px;
   border-radius: 50%;
 }
+
+/* ----------- Media Queries ------------- */
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .top-container {
+    height: 520px;
+  }
+
+  .about-container {
+    height: 400px;
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .logo-container {
+    height: 225px;
+    width: 100%;
+  }
+
+  .main-container {
+    height: 200px;
+  }
+
+  .grid {
+    height: 400px;
+  }
+
+  .second-it {
+    height: 200px;
+  }
+  .second-it .overlay {
+    height: 200px;
+  }
+
+  .third-it {
+    height: 200px;
+  }
+  .third-it .overlay {
+    height: 200px;
+  }
+
+  .first-it {
+    height: 200px;
+  }
+  .first-it .overlay {
+    height: 200px;
+  }
+
+  .second {
+    margin-top: 20px;
+  }
+
+  .third {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    margin-top: 20px;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
+  .portfolio-first {
+    margin-top: 320px;
+  }
+  .portfolio-first .logo-img {
+    width: 189px;
+    height: 126px;
+  }
+
+  .logo {
+    width: 80%;
+    height: 80%;
+  }
+
+  #menu {
+    margin-top: -20px;
+  }
+
+  .bio {
+    margin-top: 400px;
+  }
+
+  a {
+    font-size: 1em;
+  }
+
+  .uiview {
+    width: 100%;
+  }
+
+  .contactme {
+    margin-top: 50px;
+  }
+
+  .three {
+    display: none;
+  }
+
+  .aclass {
+    width: 50%;
+  }
+
+  .one {
+    width: 100%;
+  }
+
+  .two {
+    width: 100%;
+  }
+
+  .flappy-bird {
+    height: 1400px;
+  }
+  .flappy-birdcolumn2 {
+    margin-top: 20px;
+    height: 1400px;
+  }
+}
+/* Portrait */
+/* Landscape */
+/* ----------- iPhone 6 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .top-container {
+    height: 520px;
+  }
+
+  .about-container {
+    height: 400px;
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .logo-container {
+    height: 120px;
+    width: 100%;
+  }
+
+  .main-container {
+    height: 300px;
+  }
+
+  .grid {
+    height: 400px;
+  }
+
+  .second-it {
+    height: 200px;
+  }
+  .second-it .overlay {
+    height: 200px;
+  }
+
+  .third-it {
+    height: 200px;
+  }
+  .third-it .overlay {
+    height: 200px;
+  }
+
+  .first-it {
+    height: 200px;
+  }
+  .first-it .overlay {
+    height: 200px;
+  }
+
+  .second {
+    margin-top: 20px;
+  }
+
+  .third {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    margin-top: 20px;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
+  .portfolio-first {
+    margin-top: 320px;
+  }
+  .portfolio-first .logo-img {
+    width: 189px;
+    height: 126px;
+  }
+
+  .logo {
+    width: 80%;
+    height: 80%;
+  }
+
+  #menu {
+    margin-top: -20px;
+  }
+
+  .bio {
+    margin-top: 320px;
+  }
+
+  a {
+    font-size: 1em;
+  }
+
+  .uiview {
+    width: 100%;
+  }
+
+  .contactme {
+    margin-top: 50px;
+  }
+
+  .three {
+    display: none;
+  }
+
+  .aclass {
+    width: 50%;
+  }
+
+  .one {
+    width: 100%;
+  }
+
+  .two {
+    width: 100%;
+  }
+
+  .flappy-bird {
+    height: 550px;
+  }
+  .flappy-birdcolumn2 {
+    margin-top: 20px;
+    height: 550px;
+  }
+}
+/* Portrait */
+/* Landscape */
+/* ----------- iPhone 6+ ----------- */
+/* Portrait and Landscape */
+/* Portrait */
+/* Landscape */
+/* ----------- Non-Retina Screens ----------- */
+/* ----------- Retina Screens ----------- */
+/* ----------- iPad mini ----------- */
+/* Portrait and Landscape */
+/* Portrait */
+/* Landscape */
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+/* Portrait */
+/* Landscape */
