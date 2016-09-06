@@ -19,6 +19,8 @@
 	gulp.task('html', ['delete'], function() {
 		gulp.src(['app/donut-clicker/www/**/*'])
 			.pipe(gulp.dest('./public/donutclicker'));
+		gulp.src(['app/flappy/**/*'])
+			.pipe(gulp.dest('./public/flappy'));
 		gulp.src(['app/assets/thirdparty/**/*'])
 			.pipe(gulp.dest('./public/assets/thirdparty'));
 		sass('app/assets/styles/main.scss', { style: 'expanded' })
@@ -66,25 +68,26 @@
 			.pipe(clean());
 	});
 	gulp.task('develop', ['html','nodeman'], function(){
+		
 	});
 
 
-	// gulp.task('watch', function() {
-	//
-	// 	// Watch .scss files
-	// 	gulp.watch('app/assets/styles/**/*.scss', ['styles']);
-	//
-	// 	// Watch .js files
-	// 	gulp.watch('app/assets/scripts/**/*.js', ['scripts']);
-	//
-	// 	// Watch image files
-	// 	gulp.watch('app/assets/img/**/*', ['images']);
-	//
-	// 	// Create LiveReload server
-	// 	livereload.listen();
-	//
-	// 	// Watch any files in dist/, reload on change
-	// 	gulp.watch(['public/**']).on('change', livereload.changed);
-	//
-	// });
+	gulp.task('watch', function() {
+	
+		// Watch .scss files
+		gulp.watch('app/assets/styles/**/*.scss');
+	
+		// Watch .js files
+		gulp.watch('app/assets/scripts/**/*.js');
+	
+		// Watch image files
+		gulp.watch('app/assets/img/**/*');
+	
+		// Create LiveReload server
+		livereload.listen();
+	
+		// Watch any files in dist/, reload on change
+		gulp.watch(['public/**']).on('change', livereload.changed);
+	
+	});
 })();

@@ -5,11 +5,31 @@ body {
   background: #303137;
 }
 
-a {
+a.svg {
+  position: relative;
+  display: inline-block;
+}
+
+a.svg:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+
+h4 {
+  font-size: 1.1em;
+}
+h4 a {
+  color: #1d74bd;
+  font-size: 1.1em;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.25em;
-  text-shadow: 1px 1px black;
+}
+h4 a:hover {
+  color: gray !important;
 }
 
 .main-container {
@@ -17,8 +37,17 @@ a {
   height: 400px;
 }
 
+.imging {
+  width: 100%;
+  height: 100%;
+}
+
 .uiview {
   width: 75%;
+}
+
+.capable {
+  height: 150px;
 }
 
 .wrapit {
@@ -35,11 +64,10 @@ a {
 .names {
   display: -ms-flexbox;
   display: flex;
-  width: 75%;
+  width: 100%;
   -ms-flex-direction: row;
       flex-direction: row;
   color: white;
-  font-size: 1.5em;
 }
 
 .first_name {
@@ -47,19 +75,10 @@ a {
   outline: 0;
   background: transparent;
   border-bottom: 2px solid white;
-  width: 50%;
+  width: 100%;
   color: white;
-  font-size: 1.5em;
-}
-
-.last_name {
-  border: 0;
-  outline: 0;
-  background: transparent;
-  border-bottom: 2px solid white;
-  width: 50%;
-  color: white;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  padding-bottom: 5px;
 }
 
 .emailadd {
@@ -69,8 +88,7 @@ a {
   -ms-flex-direction: row;
       flex-direction: row;
   color: white;
-  font-size: 1.5em;
-  margin-top: 25px;
+  margin-top: 18px;
 }
 
 .email_address {
@@ -80,11 +98,150 @@ a {
   border-bottom: 2px solid white;
   width: 100%;
   color: white;
-  font-size: 1.5em;
+  font-size: 1.3em;
+  padding-bottom: 5px;
 }
 
 .contactme {
   margin-top: 100px;
+}
+.contactme h2 {
+  color: #1d74bd;
+}
+
+.bio {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  background: white;
+  width: 100%;
+  height: 500px;
+  -ms-flex-align: end;
+      align-items: flex-end;
+}
+.bio .first-column {
+  margin-top: 50px;
+  width: 90%;
+  height: 650px;
+}
+
+.footer-cont {
+  width: 75%;
+}
+
+.one {
+  display: -ms-flexbox;
+  display: flex;
+  width: 33.333%;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+
+.two {
+  color: white;
+  font-size: 1.25em;
+  width: 33.333%;
+  z-index: 1000;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: end;
+      align-items: flex-end;
+  -ms-flex-pack: center;
+      justify-content: center;
+}
+.two .text {
+  height: 200px;
+}
+.two .text a {
+  color: #1d74bd;
+  text-decoration: none;
+}
+.two .text a:hover {
+  color: gray !important;
+}
+.two .social {
+  width: 200px;
+}
+.two .social ul {
+  list-style: none;
+  overflow: hidden;
+  padding: 0;
+}
+.two .social li {
+  float: left;
+}
+.two .social li a {
+  color: #1d74bd;
+}
+.two .social li a :hover {
+  color: gray;
+}
+.two .social .padding {
+  padding-top: 0;
+  padding-left: 5px;
+}
+
+.three {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  width: 33.333%;
+}
+.three a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.25em;
+  text-shadow: 1px 1px black;
+}
+.three ul {
+  list-style: none;
+  padding: 0;
+  font-weight: 100;
+}
+.three li:first-child {
+  margin-top: 0;
+}
+.three li {
+  background-image: linear-gradient(to bottom, transparent 50%, #448ccb 50%, #448ccb 95%, #1d74bd 95%);
+  -ms-flex: 1 1;
+      flex: 1 1;
+  background-size: 100% 200%;
+  background-position: top center;
+  color: white;
+  display: block;
+  text-decoration: none;
+  transition: all .25s ease-in-out;
+}
+.three li a:hover {
+  color: #eee;
+}
+.three li:hover {
+  background-position: bottom center;
+  color: rgba(0, 0, 0, 0.75);
+}
+.three li a {
+  color: white;
+  display: block;
+  padding: 1rem 0;
+  transition: all .25s ease-in-out;
+}
+.three.active {
+  height: 320px;
+}
+.three.linkser {
+  height: 50px;
+  color: white;
+  font-size: 1.25em;
 }
 
 .messages {
@@ -92,14 +249,52 @@ a {
   box-sizing: border-box;
   outline: 0;
   background: transparent;
-  font-size: 1.5em;
+  font-size: 1.3em;
   color: white;
-  margin-top: 20px;
+  margin-top: 18px;
+  height: 200px;
 }
 
 .footer {
   height: 300px;
-  background-color: white;
+  background: url("../img/overlay_img_small.png");
+  background-size: cover;
+  background-postion: center;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  width: 100%;
+  -ms-flex-align: center;
+      align-items: center;
+}
+
+.beyond {
+  height: 50px;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-direction: column;
+      flex-direction: column;
+  -ms-flex-align: center;
+      align-items: center;
+  width: 100%;
+  background: #6752E8;
+}
+
+.contains {
+  width: 75%;
+  height: 50px;
+  color: white;
+  position: absolute;
+}
+.contains .copyright {
+  -ms-flex-align: end;
+      -ms-grid-row-align: flex-end;
+      align-items: flex-end;
+  text-align: center;
+  width: 100%;
+  height: 30px;
+  margin-top: 20px;
 }
 
 .logo-container {
@@ -109,10 +304,37 @@ a {
   width: 50%;
 }
 
+.button {
+  border: 0;
+  background-color: black;
+  color: white;
+  padding: 10px;
+  font-size: 1em;
+  width: 66px;
+  height: 20px;
+  text-align: center;
+  cursor: pointer;
+}
+
+.button:active {
+  background-color: white;
+  color: black;
+}
+
 .main {
   margin-top: 100px;
   width: 100%;
   margin-bottom: 100px;
+}
+
+.twocontainer {
+  width: 100%;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-direction: row;
+      flex-direction: row;
 }
 
 .top-container {
@@ -122,6 +344,150 @@ a {
       flex-wrap: wrap;
   -ms-flex-direction: row;
       flex-direction: row;
+}
+
+.heading {
+  font-size: 3em;
+  color: white;
+}
+
+.donut-clicker-top {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #ef794c;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.donut-clicker-top .logo-img {
+  width: 337px;
+  height: 225px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  position: absolute;
+}
+.donut-clicker-top .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.donut-clicker-top :hover .overlay {
+  opacity: 1;
+}
+.donut-clicker-top .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.flappy-bird-top {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #4d403c;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.flappy-bird-top .logo-img {
+  width: 337px;
+  height: 225px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  position: absolute;
+}
+.flappy-bird-top .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.flappy-bird-top :hover .overlay {
+  opacity: 1;
+}
+.flappy-bird-top .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.xactware-top {
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: 300px;
+  background-color: #069EEF;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
+}
+.xactware-top .logo-img {
+  width: 337px;
+  height: 225px;
+  margin-top: 10px;
+  margin-left: 10px;
+  color: white;
+  position: absolute;
+}
+.xactware-top .overlay {
+  background: rgba(0, 0, 0, 0.75);
+  text-align: center;
+  width: 100%;
+  height: 300px;
+  opacity: 0;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-align: center;
+      align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -webkit-transition: opacity .25s ease;
+  -moz-transition: opacity .25s ease;
+  left: 0;
+}
+.xactware-top :hover .overlay {
+  opacity: 1;
+}
+.xactware-top .plus {
+  font-family: Helvetica;
+  font-weight: 900;
+  color: rgba(255, 255, 255, 0.85);
+  font-size: 96px;
+}
+
+.no-cursor {
+  cursor: default !important;
 }
 
 .portfolio-first {
@@ -178,7 +544,7 @@ a {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 33.333%;
+  width: 100%;
   height: 400px;
   text-align: center;
   cursor: pointer;
@@ -229,7 +595,7 @@ a {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 33.333%;
+  width: 100%;
   height: 400px;
   text-align: center;
   cursor: pointer;
@@ -264,7 +630,7 @@ a {
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;
-  width: 33.333%;
+  width: 100%;
   height: 400px;
   text-align: center;
   cursor: pointer;
@@ -356,6 +722,21 @@ a {
       flex-direction: row;
 }
 
+.aclass {
+  width: 33.333%;
+  text-decoration: none;
+}
+
+.footer-grid {
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  height: 300px;
+  -ms-flex-direction: row;
+      flex-direction: row;
+}
+
 .second {
   -ms-flex: 1;
       flex: 1;
@@ -401,40 +782,13 @@ a {
   border-radius: 5px;
 }
 
-.message, .contact, .name, .footer, header, textarea {
+.message, textarea {
   display: block;
   padding: 0;
   margin: 0;
   border: 0;
   clear: both;
   overflow: hidden;
-}
-
-header {
-  height: 75px;
-  background: rgba(0, 0, 0, 0.05);
-  line-height: 75px;
-  padding-left: 20px;
-  border-radius: 5px 5px 0 0;
-}
-header h1 {
-  font-size: 1.2em;
-  text-transform: uppercase;
-  color: rgba(51, 51, 51, 0.4);
-}
-
-.first, .last {
-  float: left;
-  width: 278px;
-  margin: 0;
-  padding: 0 0 0 20px;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  height: 50px;
-}
-
-.last {
-  width: 279px;
-  border-left: 0;
 }
 
 .navToggle {
@@ -513,6 +867,12 @@ header h1 {
   text-align: center;
   -webkit-transition: all 0.5s;
 }
+#menu a {
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.25em;
+  text-shadow: 1px 1px black;
+}
 #menu ul {
   list-style: none;
   padding: 0;
@@ -552,6 +912,82 @@ header h1 {
   height: 320px;
 }
 
+.doingutahdaily {
+  background-color: white;
+  display: -ms-flexbox;
+  display: flex;
+  height: 650px;
+}
+.doingutahdaily .column1 {
+  width: 50%;
+  height: 650px;
+}
+.doingutahdaily .column1 ul {
+  list-style-type: none;
+}
+.doingutahdaily .column2 {
+  width: 50%;
+  height: 659px;
+}
+
+.padding {
+  padding: 10px;
+}
+
+.xactware {
+  height: 850px;
+  display: -ms-flexbox;
+  display: flex;
+  background: white;
+}
+.xactware .column1 {
+  width: 50%;
+  height: 650px;
+}
+.xactware .column1 ul {
+  list-style-type: none;
+}
+.xactware .column2 {
+  width: 50%;
+  height: 659px;
+}
+
+.donut-clicker {
+  height: 1100px;
+  display: -ms-flexbox;
+  display: flex;
+  background: white;
+}
+.donut-clicker .column1 {
+  width: 50%;
+  height: 650px;
+}
+.donut-clicker .column1 ul {
+  list-style-type: none;
+}
+.donut-clicker .column2 {
+  width: 50%;
+  height: 659px;
+}
+
+.flappy-bird {
+  height: 1400px;
+  background: white;
+  display: -ms-flexbox;
+  display: flex;
+}
+.flappy-bird .column1 {
+  width: 50%;
+  height: 650px;
+}
+.flappy-bird .column1 ul {
+  list-style-type: none;
+}
+.flappy-bird .column2 {
+  width: 50%;
+  height: 1400px;
+}
+
 @media all and (max-width: 640px) {
   .top-container {
     height: 520px;
@@ -582,14 +1018,12 @@ header h1 {
 
   .second-it {
     height: 200px;
-    width: 50%;
   }
   .second-it .overlay {
     height: 200px;
   }
 
   .third-it {
-    width: 50%;
     height: 200px;
   }
   .third-it .overlay {
@@ -598,7 +1032,6 @@ header h1 {
 
   .first-it {
     height: 200px;
-    width: 50%;
   }
   .first-it .overlay {
     height: 200px;
@@ -633,6 +1066,10 @@ header h1 {
     margin-top: -20px;
   }
 
+  .bio {
+    margin-top: 320px;
+  }
+
   a {
     font-size: 1em;
   }
@@ -642,6 +1079,313 @@ header h1 {
   }
 
   .contactme {
-    margin-top: 320px;
+    margin-top: 50px;
+  }
+
+  .three {
+    display: none;
+  }
+
+  .aclass {
+    width: 50%;
+  }
+
+  .one {
+    width: 100%;
+  }
+
+  .two {
+    width: 100%;
+  }
+
+  .flappy-bird {
+    height: 550px;
+  }
+  .flappy-birdcolumn2 {
+    margin-top: 20px;
+    height: 550px;
   }
 }
+.bio-row {
+  width: 100%;
+  -ms-flex-direction: row;
+      flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.elevencolumn {
+  width: 25%;
+}
+
+.twelvecolumn {
+  width: 75%;
+}
+
+.img-circle {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+/* ----------- Media Queries ------------- */
+/* ----------- iPhone 5 and 5S ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 320px) and (max-device-width: 568px) and (-webkit-min-device-pixel-ratio: 2) {
+  .top-container {
+    height: 520px;
+  }
+
+  .about-container {
+    height: 400px;
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .logo-container {
+    height: 225px;
+    width: 100%;
+  }
+
+  .main-container {
+    height: 200px;
+  }
+
+  .grid {
+    height: 400px;
+  }
+
+  .second-it {
+    height: 200px;
+  }
+  .second-it .overlay {
+    height: 200px;
+  }
+
+  .third-it {
+    height: 200px;
+  }
+  .third-it .overlay {
+    height: 200px;
+  }
+
+  .first-it {
+    height: 200px;
+  }
+  .first-it .overlay {
+    height: 200px;
+  }
+
+  .second {
+    margin-top: 20px;
+  }
+
+  .third {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    margin-top: 20px;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
+  .portfolio-first {
+    margin-top: 320px;
+  }
+  .portfolio-first .logo-img {
+    width: 189px;
+    height: 126px;
+  }
+
+  .logo {
+    width: 80%;
+    height: 80%;
+  }
+
+  #menu {
+    margin-top: -20px;
+  }
+
+  .bio {
+    margin-top: 400px;
+  }
+
+  a {
+    font-size: 1em;
+  }
+
+  .uiview {
+    width: 100%;
+  }
+
+  .contactme {
+    margin-top: 50px;
+  }
+
+  .three {
+    display: none;
+  }
+
+  .aclass {
+    width: 50%;
+  }
+
+  .one {
+    width: 100%;
+  }
+
+  .two {
+    width: 100%;
+  }
+
+  .flappy-bird {
+    height: 1400px;
+  }
+  .flappy-birdcolumn2 {
+    margin-top: 20px;
+    height: 1400px;
+  }
+}
+/* Portrait */
+/* Landscape */
+/* ----------- iPhone 6 ----------- */
+/* Portrait and Landscape */
+@media only screen and (min-device-width: 375px) and (max-device-width: 667px) and (-webkit-min-device-pixel-ratio: 2) {
+  .top-container {
+    height: 520px;
+  }
+
+  .about-container {
+    height: 400px;
+    width: 100%;
+  }
+
+  .main {
+    margin-top: 0;
+    width: 100%;
+  }
+
+  .logo-container {
+    height: 120px;
+    width: 100%;
+  }
+
+  .main-container {
+    height: 300px;
+  }
+
+  .grid {
+    height: 400px;
+  }
+
+  .second-it {
+    height: 200px;
+  }
+  .second-it .overlay {
+    height: 200px;
+  }
+
+  .third-it {
+    height: 200px;
+  }
+  .third-it .overlay {
+    height: 200px;
+  }
+
+  .first-it {
+    height: 200px;
+  }
+  .first-it .overlay {
+    height: 200px;
+  }
+
+  .second {
+    margin-top: 20px;
+  }
+
+  .third {
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    margin-top: 20px;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%;
+  }
+
+  .portfolio-first {
+    margin-top: 320px;
+  }
+  .portfolio-first .logo-img {
+    width: 189px;
+    height: 126px;
+  }
+
+  .logo {
+    width: 80%;
+    height: 80%;
+  }
+
+  #menu {
+    margin-top: -20px;
+  }
+
+  .bio {
+    margin-top: 320px;
+  }
+
+  a {
+    font-size: 1em;
+  }
+
+  .uiview {
+    width: 100%;
+  }
+
+  .contactme {
+    margin-top: 50px;
+  }
+
+  .three {
+    display: none;
+  }
+
+  .aclass {
+    width: 50%;
+  }
+
+  .one {
+    width: 100%;
+  }
+
+  .two {
+    width: 100%;
+  }
+
+  .flappy-bird {
+    height: 550px;
+  }
+  .flappy-birdcolumn2 {
+    margin-top: 20px;
+    height: 550px;
+  }
+}
+/* Portrait */
+/* Landscape */
+/* ----------- iPhone 6+ ----------- */
+/* Portrait and Landscape */
+/* Portrait */
+/* Landscape */
+/* ----------- Non-Retina Screens ----------- */
+/* ----------- Retina Screens ----------- */
+/* ----------- iPad mini ----------- */
+/* Portrait and Landscape */
+/* Portrait */
+/* Landscape */
+/* ----------- iPad 3 and 4 ----------- */
+/* Portrait and Landscape */
+/* Portrait */
+/* Landscape */
