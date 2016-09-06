@@ -6,19 +6,11 @@
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
 
-<<<<<<< HEAD
-	app.use('/', express.static(__dirname + '/'));
-	app.use('/donutclicker', express.static(__dirname + '/donutclicker'));
-	app.use('/', express.static(__dirname));
 	var port = (process.env.PORT || 8080);
-=======
     app.use('/', express.static(__dirname + '/'));
     app.use('/donutclicker', express.static(__dirname + '/donutclicker'));
     app.use('/flappy', express.static(__dirname + '/flappy'));
     app.use('/', express.static(__dirname));
-    var port = (process.env.PORT || 5000);
->>>>>>> 6b1b53c822807359f4d8c8d4bdbb56786f50494d
-
     app.post('/api/contact', function (req, res) {
 
     });
