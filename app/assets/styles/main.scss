@@ -435,11 +435,14 @@ h4 {
 }
 .portfolio-first {
   display: flex;
+  display: -webkit-flex;
   width: 100%;
   height: 300px;
   background: url('../img/landingpage.jpg');
   background-size: cover;
   background-position: center;
+  -webkit-justify-content: center;
+  -webkit-align-items: center;
   justify-content: center;
   align-items: center;
   cursor: pointer;
@@ -458,6 +461,9 @@ h4 {
     height: 300px;
     opacity: 0;
     display: flex;
+    display: -webkit-flex;
+    -webkit-justify-content: center;
+    -webkit-align-items: center;
     align-items: center;
     justify-content: center;
     -webkit-transition: opacity .25s ease;
@@ -1038,12 +1044,21 @@ h4 {
 and (min-device-width: 320px)
 and (max-device-width: 568px)
 and (-webkit-min-device-pixel-ratio: 2) {
+  .capable {
+    height: 300px;
+  }
+  .contactme {
+    padding: 10px;
+  }
   .top-container {
     height: 520px;
   }
   .about-container {
     height: 400px;
     width: 100%;
+  }
+  p {
+    font-size: 1.75em;
   }
   .main {
     margin-top: 0;
@@ -1054,7 +1069,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
     width: 100%;
   }
   .main-container {
-    height: 200px;
+    height: 300px;
+  }
+  h4 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 2em;
   }
   .grid {
     height: 400px;
@@ -1070,6 +1091,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
     & .overlay {
       height: 200px;
     }
+  }
+  .text {
+    font-size: 1.75em;
   }
   .first-it {
     height: 200px;
@@ -1093,6 +1117,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
     }
   }
+  .footer {
+    height: 350px;
+  }
   .logo {
     width: 80%;
     height: 80%;
@@ -1101,10 +1128,14 @@ and (-webkit-min-device-pixel-ratio: 2) {
     margin-top: -20px;
   }
   .bio {
-    margin-top: 400px;
+    margin-top: 320px;
+    height: 750px;
   }
   a {
     font-size: 1em;
+  }
+  .skills {
+    font-size: 1.75em;
   }
   .uiview {
     width: 100%;
@@ -1159,6 +1190,12 @@ and (orientation: landscape) {
 and (min-device-width: 375px)
 and (max-device-width: 667px)
 and (-webkit-min-device-pixel-ratio: 2) {
+  .capable {
+    height: 300px;
+  }
+  .contactme {
+    padding: 10px;
+  }
   .top-container {
     height: 520px;
   }
@@ -1166,36 +1203,48 @@ and (-webkit-min-device-pixel-ratio: 2) {
     height: 400px;
     width: 100%;
   }
+  p {
+    font-size: 1.75em;
+  }
   .main {
     margin-top: 0;
     width: 100%;
   }
   .logo-container {
-    height: 120px;
+    height: 225px;
     width: 100%;
   }
   .main-container {
     height: 300px;
   }
+  h4 {
+    font-size: 2.5em;
+  }
+  h2 {
+    font-size: 2em;
+  }
   .grid {
-    height: 400px;
+    height: 800px;
   }
   .second-it {
-    height: 200px;
+    height: 400px;
     & .overlay {
-      height: 200px;
+      height: 400px;
     }
   }
   .third-it {
-    height: 200px;
+    height: 400px;
     & .overlay {
-      height: 200px;
+      height: 400px;
     }
   }
+  .text {
+    font-size: 1.75em;
+  }
   .first-it {
-    height: 200px;
+    height: 400px;
     & .overlay {
-      height: 200px;
+      height: 400px;
     }
   }
   .second {
@@ -1214,6 +1263,9 @@ and (-webkit-min-device-pixel-ratio: 2) {
 
     }
   }
+  .footer {
+    height: 350px;
+  }
   .logo {
     width: 80%;
     height: 80%;
@@ -1223,9 +1275,13 @@ and (-webkit-min-device-pixel-ratio: 2) {
   }
   .bio {
     margin-top: 320px;
+    height: 750px;
   }
   a {
     font-size: 1em;
+  }
+  .skills {
+    font-size: 1.75em;
   }
   .uiview {
     width: 100%;
@@ -1246,10 +1302,10 @@ and (-webkit-min-device-pixel-ratio: 2) {
     width: 100%;
   }
   .flappy-bird {
-    height: 550px;
+    height: 1400px;
     &column2 {
       margin-top: 20px;
-      height: 550px;
+      height: 1400px;
     }
   }
 
@@ -1307,6 +1363,13 @@ and (orientation: landscape) {
 and (min-device-width: 1200px)
 and (max-device-width: 1600px)
 and (-webkit-min-device-pixel-ratio: 1) {
+  .flappy-bird {
+    height: 1200px;
+    &column2 {
+      margin-top: 20px;
+      height: 1200px;
+    }
+  }
 }
 
 /* ----------- Retina Screens ----------- */
@@ -1315,6 +1378,13 @@ and (min-device-width: 1200px)
 and (max-device-width: 1600px)
 and (-webkit-min-device-pixel-ratio: 2)
 and (min-resolution: 192dpi) {
+  .flappy-bird {
+    height: 1400px;
+    &column2 {
+      margin-top: 20px;
+      height: 1400px;
+    }
+  }
 
 }
 /* ----------- iPad mini ----------- */
