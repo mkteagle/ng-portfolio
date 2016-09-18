@@ -1463,11 +1463,11 @@ h4 a:hover {
 /* ----------- Retina Screens ----------- */
 @media screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (-webkit-min-device-pixel-ratio: 2), screen and (min-device-width: 1200px) and (max-device-width: 1600px) and (-webkit-min-device-pixel-ratio: 2) and (min-resolution: 192dpi) {
   .flappy-bird {
-    height: 1200px;
+    height: 1400px;
   }
   .flappy-birdcolumn2 {
     margin-top: 20px;
-    height: 1200px;
+    height: 1400px;
   }
 }
 /* ----------- iPad mini ----------- */

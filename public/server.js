@@ -6,11 +6,12 @@
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
 
-	var port = (process.env.PORT || 8080);
     app.use('/', express.static(__dirname + '/'));
     app.use('/donutclicker', express.static(__dirname + '/donutclicker'));
     app.use('/flappy', express.static(__dirname + '/flappy'));
     app.use('/', express.static(__dirname));
+    var port = (process.env.PORT || 5000);
+
     app.post('/api/contact', function (req, res) {
 
     });
