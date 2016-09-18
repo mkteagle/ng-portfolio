@@ -851,7 +851,7 @@ h4 {
 .doingutahdaily {
   background-color: white;
   display: flex;
-  height: 650px;
+  height: 700px;
   .column1 {
     width: 50%;
     height: 650px;
@@ -861,7 +861,7 @@ h4 {
   }
   .column2 {
     width: 50%;
-    height: 659px;
+    height: 700px;
   }
 }
 
@@ -869,22 +869,6 @@ h4 {
   padding: 10px;
 }
 .xactware {
-  height: 850px;
-  display: flex;
-  background: white;
-  .column1 {
-    width: 50%;
-    height: 650px;
-    ul {
-      list-style-type: none;
-    }
-  }
-  .column2 {
-    width: 50%;
-    height: 659px;
-  }
-}
-.donut-clicker {
   height: 1100px;
   display: flex;
   background: white;
@@ -897,11 +881,27 @@ h4 {
   }
   .column2 {
     width: 50%;
-    height: 659px;
+    height: 1100px;
+  }
+}
+.donut-clicker {
+  height: 1400px;
+  display: flex;
+  background: white;
+  .column1 {
+    width: 50%;
+    height: 650px;
+    ul {
+      list-style-type: none;
+    }
+  }
+  .column2 {
+    width: 50%;
+    height: 1400px;
   }
 }
 .flappy-bird {
-  height: 1400px;
+  height: 1800px;
   background: white;
   display: flex;
   .column1 {
@@ -913,7 +913,7 @@ h4 {
   }
   .column2 {
     width: 50%;
-    height: 1400px;
+    height: 1800px;
   }
 }
 
