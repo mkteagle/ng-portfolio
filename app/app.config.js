@@ -33,6 +33,11 @@
 					url:"/portfolio/xactware",
 					templateUrl: "../assets/portfolio/xactware.html"
 				})
+				.state("register", {
+					url:"/register",
+					templateUrl: "../assets/templates/register.html",
+					controller: "ngController as nc"
+				})
 				.state("flappy-bird", {
 					url:"/portfolio/flappy-bird",
 					templateUrl: "../assets/portfolio/flappy-bird.html",

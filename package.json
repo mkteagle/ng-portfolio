@@ -15,9 +15,10 @@
   "dependencies": {
     "body-parser": "^1.15.2",
     "express": "^4.14.0",
-    "firebase": "^3.2.1",
-    "forever": "^0.15.2"
-    "nodemailer": "^2.5.0",
+    "firebase": "^3.5.3",
+    "forever": "^0.15.2",
+    "nodemailer": "^2.5.0"
+  },
   "devDependencies": {
     "browser-sync": "^2.14.0",
     "concurrently": "^2.0.0",

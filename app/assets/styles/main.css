@@ -19,6 +19,12 @@ a.svg:after {
   left: 0;
 }
 
+.blackbar {
+  height: 20px;
+  background: black;
+  color: white;
+}
+
 h4 {
   font-size: 1.1em;
 }

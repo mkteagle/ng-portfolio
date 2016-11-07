@@ -10,10 +10,14 @@
 	    self.name = '';
 	    self.email = '';
 	    self.content = '';
+	    self.eaddress = '';
 	    self.$http = $http;
 		self.donutclicker = donutclicker;
 		self.flappy = flappy;
 		self.home = home;
+	    self.register = register;
+	    self.registerPage = registerPage;
+	    self.signIn = signIn;
 
 	    function post() {
 	    	var message = {
@@ -37,6 +41,24 @@
 		}
 		function flappy() {
 			$window.location.href = './flappy/index.html';
+		}
+		function registerPage() {
+			$window.location.href = './register/index.html';
+		}
+		function signIn() {
+			$window.location.href = './login/index.html';
+		}
+		function blog() {
+			$window.location.href = './blog/index.html';
+		}
+		function register() {
+			var body = {
+				email: self.eaddress,
+				password: self.password
+			};
+			self.$http.post('/api/register', body).then(function(response) {
+				console.log(response);
+			})
 		}
         
     }
