@@ -17,7 +17,7 @@
 		self.home = home;
 	    self.register = register;
 	    self.registerPage = registerPage;
-	    self.signIn = signIn;
+	    self.login = login;
 
 	    function post() {
 	    	var message = {
@@ -45,7 +45,7 @@
 		function registerPage() {
 			$window.location.href = './register/index.html';
 		}
-		function signIn() {
+		function login() {
 			$window.location.href = './login/index.html';
 		}
 		function blog() {

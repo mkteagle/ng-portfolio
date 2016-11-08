@@ -21,6 +21,10 @@
 			.pipe(gulp.dest('./public/donutclicker'));
 		gulp.src(['app/flappy/**/*'])
 			.pipe(gulp.dest('./public/flappy'));
+		gulp.src(['app/login/**/*'])
+			.pipe(gulp.dest('./public/login'));
+		gulp.src(['app/register/**/*'])
+			.pipe(gulp.dest('./public/register'));
 		gulp.src(['app/assets/thirdparty/**/*'])
 			.pipe(gulp.dest('./public/assets/thirdparty'));
 		sass('app/assets/styles/main.scss', { style: 'expanded' })

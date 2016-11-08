@@ -1,0 +1,51 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<title>Login to Mkteagle.com</title>
+<!-- Custom Theme files -->
+<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+<!-- Custom Theme files -->
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!--Google Fonts-->
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+<!--Google Fonts-->
+</head>
+<body>
+<!--login form start here-->	
+<h1>Login to Mkteagle.com</h1>
+<div class="login">
+	<div class="buttons">
+		<ul>
+			<li><a class="face" href="#"><span class="face"> </span>Login Using Facebook</a></li>
+			<li><a class="twit" href="#"><span class="twit"> </span>Login Using Twitter</a></li>
+		</ul>
+	</div>
+	<h2>Or</h2>
+	<form>
+	<input type="text" value="Username" ng-model="nc.eaddress" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}"/>
+	<input type="password" ng-model="nc.password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}"/>
+	</form>
+	<div class="forgot">
+   	  <label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i> Keep me signed in</label>
+   	  <div class="forgot-para">
+   	  	<a href="#"> <p>Forgot Your Password?</p></a>
+   	  </div>
+	   	<div class="clear"> </div>
+	</div>
+	<form>
+	<label  class="hvr-sweep-to-bottom">
+	<input type="submit" value="Login"/>
+	</label>
+	</form>
+	<h3>Not a member ? <a href="#">Sign up now!</a>  </h3>
+</div>
+<div style="text-align:center; margin-top:10px;">
+<div class="copyright">
+	<p>Template by <a href="https://www.designmaz.net/" target="_blank">Designmaz</a></p>
+</div>	
+<!--login form end here-->
+</body>
+</html>
