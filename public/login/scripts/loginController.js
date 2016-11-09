@@ -8,18 +8,9 @@
 		self.$http = $http;
 		self.register = register;
 		self.signIn = signIn;
-		self.googleLogin = googleLogin;
-		self.facebookLogin = facebookLogin;
 		self.authenticated = null;
+		self.wrongPassword =  '';
 
-		function facebookLogin() {
-
-		}
-		function googleLogin() {
-			self.$http.post('/api/googleLogin').then(function(response){
-				console.log(response);
-			})
-		}
 		function signIn() {
 			var body = {
 				email: self.eaddress,
@@ -27,19 +18,20 @@
 			};
 			self.$http.post('/api/login', body).then(function(response) {
 				console.log(response);
-				if (response.data.code = "auth/wrong-password") {
-					console.log(response.data.message);
-				}
-				else {
-					var object = {
-						uid: response.data.uid,
-						email: response.data.email
-					};
-					console.log(object);
-					self.$http.post('/api/updateUser', object).then(function(response){
-						console.log(response);
-					})
-				}
+					if (response.data.code = "auth/wrong-password") {
+						self.wrongPassword = response.data.message;
+						console.log(self.wrongPassword);
+					}
+					else {
+						var object = {
+							uid: response.data.uid,
+							email: response.data.email
+						};
+						console.log(object);
+						self.$http.post('/api/updateUser', object).then(function(response){
+							console.log(response);
+						})
+					}
 			})
 		}
 

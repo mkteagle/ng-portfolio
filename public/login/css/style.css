@@ -34,6 +34,7 @@ body {
    font-family: 'Open Sans', sans-serif;
    font-size: 100%;
 }
+
 h1 {
   font-size: 1.7em;
   font-weight: 600;
@@ -48,6 +49,10 @@ h1 {
   background: #fff;
   padding: 30px;
  
+}
+.wrong {
+	z-index: 1000;
+	color: red;
 }
 .buttons {
   margin: 1em 0em 2em;

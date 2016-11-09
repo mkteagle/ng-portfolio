@@ -18,6 +18,7 @@
 <h1>Login to mkteagle.com</h1>
 <div class="login">
 	<form>
+		<div class="wrong" ng-show="lc.wrongPassword"></div>
 	<input type="text" ng-model="lc.eaddress" placeholder="Username" />
 	<input type="password" ng-model="lc.password" value="Password" placeholder="Password" />
 	</form>
