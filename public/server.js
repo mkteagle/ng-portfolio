@@ -24,6 +24,7 @@
 	};
 	firebase.initializeApp(config);
 
+
     app.post('/api/contact', function (req, res) {
 
     });
@@ -37,13 +38,41 @@
 		});
 	});
 	app.post('/api/login', function(req, res) {
-
+		firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
+			.then(function(response) {
+				res.send(response);
+			})
+			.catch(function(error) {
+				if (error) throw error;
+			});
 	});
 	app.post('/api/logout', function(req, res) {
-
+		firebase.auth().signOut().then(function() {
+			console.log("Successfully Signed Out");
+			// Sign-out successful.
+		}, function(error) {
+			if (error) throw error;
+			// An error happened.
+		});
 	});
 	app.post('/api/googleLogin', function(req, res) {
+		var provider = new firebase.auth.GoogleAuthProvider();
+		firebase.auth().signInWithPopup(provider).then(function(result) {
+			var token = result.credential.accessToken;
+			var user = result.user;
+			res.send(user);
 
+		}).catch(function(error) {
+			var errorCode = error.code;
+			var errorMessage = error.message;
+			// The email of the user's account used.
+			var email = error.email;
+			// The firebase.auth.AuthCredential type that was used.
+			var credential = error.credential;
+		});
+	});
+	app.post('/api/updateUser', function(req, res) {
+		console.log('Made it here');
 	});
 	app.post('/api/facebookLogin', function(req, res) {
 
@@ -62,9 +91,7 @@
 	});
 
 
-    app.listen(port, function () {
-        console.log(`App listening on port ${port}...`);
-    });
+
 
 
 // create reusable transporter object using the default SMTP transport
@@ -93,4 +120,7 @@
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/index.html');
     });
+	app.listen(port, function () {
+		console.log(`App listening on port ${port}...`);
+	});
 })();

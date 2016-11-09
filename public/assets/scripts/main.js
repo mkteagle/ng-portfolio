@@ -2,11 +2,11 @@
     angular.module('ngController', [])
         .controller('ngController', ngController);
 	ngController.$inject =['$http', '$window', '$state'];
+
     function ngController($http, $window, $state) {
     	var self = this;
 	    self.options = false;
 	    self.dud = false;
-	    self.post = post;
 	    self.name = '';
 	    self.email = '';
 	    self.content = '';
@@ -18,6 +18,7 @@
 	    self.register = register;
 	    self.registerPage = registerPage;
 	    self.login = login;
+	    self.post = post;
 
 	    function post() {
 	    	var message = {

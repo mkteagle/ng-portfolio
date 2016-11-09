@@ -69,11 +69,13 @@ h1 {
   background: #244384;
 }
 .buttons ul li a.twit {
-	background:#00aeed;
+	color: black;
+	background: #FFFFFF;
 	padding: 0.5em 1.7em 0.5em 1em;
 }
 .buttons ul li a.twit:hover {
-	background:#26A6D5;
+	background:#4285F4;
+	color: white;
 }
 .buttons ul li a span.face {
   background: url(../images/facebook.png) no-repeat 0px 0px;
@@ -84,7 +86,7 @@ h1 {
   margin: 0em 1.5em 0em 0em;
 }
 .buttons ul li a span.twit {
-  background: url(../images/twitter.png)no-repeat 0px 0px;
+  background: url(../images/google.png)no-repeat 0px 0px;
   width:20px;
   height:20px;
   display:inline-block;

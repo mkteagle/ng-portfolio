@@ -40,15 +40,14 @@
 			.pipe(cssnano())
 			.pipe(gulp.dest('app/assets/styles'));
 		gulp.src('app/assets/scripts/**/*.js')
-			.pipe(jshint('.jshintrc'))
-			.pipe(jshint.reporter('default'))
+			// .pipe(jshint('.jshintrc'))
+			// .pipe(jshint.reporter('default'))
 			.pipe(concat('main.js'))
 			.pipe(gulp.dest('public/assets/scripts'))
 			.pipe(rename({suffix: '.min'}))
 			.pipe(uglify())
 			.pipe(gulp.dest('public/assets/scripts'));
 		gulp.src('app/assets/img/**/*')
-			.pipe(imagemin({ optimizationLevel: 3, progressive: true, interlaced: true }))
 			.pipe(gulp.dest('public/assets/img'));
 		gulp.src('app/*.html')
 			.pipe(gulp.dest('public/'));
@@ -71,11 +70,12 @@
 		return gulp.src('public/', {read: false})
 			.pipe(clean());
 	});
-	gulp.task('develop', ['html','nodeman'], function(){
+	gulp.task('develop', ['html'], function(){
 		
 	});
+	gulp.task('serve', ['nodeman'], function(){
 
-
+	});
 	gulp.task('watch', function() {
 	
 		// Watch .scss files

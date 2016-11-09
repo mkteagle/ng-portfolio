@@ -1,8 +1,7 @@
-
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Login to Mkteagle.com</title>
+<title>Login</title>
 <!-- Custom Theme files -->
 <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
 <!-- Custom Theme files -->
@@ -13,20 +12,14 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--Google Fonts-->
 </head>
-<body>
+<body ng-app="admin">
+<div ng-controller="loginController as lc">
 <!--login form start here-->	
-<h1>Login to Mkteagle.com</h1>
+<h1>Login to mkteagle.com</h1>
 <div class="login">
-	<div class="buttons">
-		<ul>
-			<li><a class="face" href="#"><span class="face"> </span>Login Using Facebook</a></li>
-			<li><a class="twit" href="#"><span class="twit"> </span>Login Using Twitter</a></li>
-		</ul>
-	</div>
-	<h2>Or</h2>
 	<form>
-	<input type="text" value="Username" ng-model="nc.eaddress" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}"/>
-	<input type="password" ng-model="nc.password" value="Password" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'User Name';}"/>
+	<input type="text" ng-model="lc.eaddress" placeholder="Username" />
+	<input type="password" ng-model="lc.password" value="Password" placeholder="Password" />
 	</form>
 	<div class="forgot">
    	  <label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i> Keep me signed in</label>
@@ -37,15 +30,17 @@
 	</div>
 	<form>
 	<label  class="hvr-sweep-to-bottom">
-	<input type="submit" value="Login"/>
+	<input type="submit" ng-click="lc.signIn()" value="Login"/>
 	</label>
 	</form>
-	<h3>Not a member ? <a href="#">Sign up now!</a>  </h3>
+	<!--<h3>Not a member? <a href="#">Sign up now!</a>  </h3>-->
 </div>
-<div style="text-align:center; margin-top:10px;">
-<div class="copyright">
-	<p>Template by <a href="https://www.designmaz.net/" target="_blank">Designmaz</a></p>
-</div>	
+</div>
 <!--login form end here-->
+	<script src="../assets/thirdparty/angular/angular.js"></script>
+	<script src="../assets/thirdparty/jquery/dist/jquery.min.js"></script>
+	<script src="./scripts/app.config.js"></script>
+	<script src="./scripts/app.module.js"></script>
+	<script src="./scripts/loginController.js"></script>
 </body>
 </html>
