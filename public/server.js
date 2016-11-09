@@ -43,7 +43,9 @@
 				res.send(response);
 			})
 			.catch(function(error) {
-				if (error) throw error;
+				if (error) {
+					res.send(error);
+				}
 			});
 	});
 	app.post('/api/logout', function(req, res) {
@@ -55,27 +57,12 @@
 			// An error happened.
 		});
 	});
-	app.post('/api/googleLogin', function(req, res) {
-		var provider = new firebase.auth.GoogleAuthProvider();
-		firebase.auth().signInWithPopup(provider).then(function(result) {
-			var token = result.credential.accessToken;
-			var user = result.user;
-			res.send(user);
-
-		}).catch(function(error) {
-			var errorCode = error.code;
-			var errorMessage = error.message;
-			// The email of the user's account used.
-			var email = error.email;
-			// The firebase.auth.AuthCredential type that was used.
-			var credential = error.credential;
-		});
-	});
 	app.post('/api/updateUser', function(req, res) {
-		console.log('Made it here');
-	});
-	app.post('/api/facebookLogin', function(req, res) {
-
+		firebase.database().ref('users/' + req.body.uid).set({
+			username: req.body.email,
+			uid : req.body.uid
+		});
+		res.send("All Done Successfully");
 	});
 	app.post('/api/addPost', function(req, res) {
 

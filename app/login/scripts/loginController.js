@@ -26,14 +26,20 @@
 				password: self.password
 			};
 			self.$http.post('/api/login', body).then(function(response) {
-				var object = {
-					udid: response.data.uid,
-					email: response.data.email
-				};
-				console.log(object);
-				self.$http.post('/api/updateUser', object).then(function(response){
-					console.log(response);
-				})
+				console.log(response);
+				if (response.data.code = "auth/wrong-password") {
+					console.log(response.data.message);
+				}
+				else {
+					var object = {
+						uid: response.data.uid,
+						email: response.data.email
+					};
+					console.log(object);
+					self.$http.post('/api/updateUser', object).then(function(response){
+						console.log(response);
+					})
+				}
 			})
 		}
 
