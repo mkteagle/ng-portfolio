@@ -1,8 +1,8 @@
 (function() {
 	angular.module('loginController', [])
 		.controller('loginController', loginController);
-	loginController.$inject =['$http'];
-	function loginController($http) {
+	loginController.$inject =['$http', '$window'];
+	function loginController($http, $window) {
 		var self = this;
 		self.email = '';
 		self.$http = $http;
@@ -30,6 +30,7 @@
 						console.log(object);
 						self.$http.post('/api/updateUser', object).then(function(response){
 							console.log(response);
+							$window.location.href = './admin/index.html';
 						})
 					}
 			})

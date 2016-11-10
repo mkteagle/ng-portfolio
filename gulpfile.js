@@ -24,6 +24,8 @@
 			.pipe(gulp.dest('./public/forgot'));
 		gulp.src(['app/register/**/*'])
 			.pipe(gulp.dest('./public/register'));
+		gulp.src(['app/admin/**/*'])
+			.pipe(gulp.dest('./public/admin'));
 		gulp.src(['app/assets/thirdparty/**/*'])
 			.pipe(gulp.dest('./public/assets/thirdparty'));
 		sass('app/assets/styles/main.scss', { style: 'expanded' })
@@ -71,6 +73,9 @@
 	});
 	gulp.task('develop', ['html'], function(){
 		
+	});
+	gulp.task('production', ['html', 'serve'], function(){
+
 	});
 	gulp.task('serve', ['nodeman'], function(){
 

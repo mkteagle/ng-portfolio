@@ -132,6 +132,21 @@ h1 {
 
     border: 2px solid #999;
 }
+.backto {
+	float: left;
+}
+.backto a {
+	font-size: 0.9em;
+	font-weight: 400;
+	color: #777;
+}
+.backto a:hover {
+	color: #00aeed;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+}
 .forgot-para {
     float: right;
 }

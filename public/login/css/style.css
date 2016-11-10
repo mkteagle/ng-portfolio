@@ -135,8 +135,26 @@ h1 {
 .forgot-para {
   float: right;
 }
+.backto {
+	float: left;
+}
+.backto a {
+	font-size: 0.9em;
+	font-weight: 400;
+	color: #777;
+}
+.backto a:hover {
+	color: #00aeed;
+	transition: 0.5s all;
+	-webkit-transition: 0.5s all;
+	-moz-transition: 0.5s all;
+	-o-transition: 0.5s all;
+}
 label.checkbox {
   float: left;
+}
+.hover {
+	cursor: pointer;
 }
 .forgot input[type="checkbox"] {
   display: none;

@@ -23,13 +23,15 @@
 	<input type="password" ng-model="lc.password" value="Password" placeholder="Password" />
 	</form>
 	<div class="forgot">
-   	  <label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i> Keep me signed in</label>
+		<div class="backto">
+			<a href="../index.html">← Back to mkteagle.com</a>
+		</div>
    	  <div class="forgot-para">
-   	  	<a href="./forgot/index.html"> <p>Forgot Your Password?</p></a>
+   	  	<a href="../forgot/index.html"> <p>Forgot Your Password?</p></a>
    	  </div>
 	   	<div class="clear"> </div>
 	</div>
-	<form>
+	<form class="hover">
 	<label  class="hvr-sweep-to-bottom">
 	<input type="submit" ng-click="lc.signIn()" value="Login"/>
 	</label>
