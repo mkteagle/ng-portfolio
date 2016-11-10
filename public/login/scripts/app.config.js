@@ -1,5 +1,5 @@
 (function() {
-	angular.module('admin.config', [])
+	angular.module('ngLogin.config', [])
 		.config(configureRouter);
 
 	configureRouter.$inject = [];

@@ -1,8 +1,8 @@
 (function(){
 	'use strict';
 	angular
-		.module('admin', [
+		.module('ngLogin', [
 			'loginController',
-			'admin.config'
+			'ngLogin.config'
 		])
 })();

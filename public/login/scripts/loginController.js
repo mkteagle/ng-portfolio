@@ -4,7 +4,7 @@
 	loginController.$inject =['$http'];
 	function loginController($http) {
 		var self = this;
-		self.eaddress = '';
+		self.email = '';
 		self.$http = $http;
 		self.register = register;
 		self.signIn = signIn;
@@ -13,7 +13,7 @@
 
 		function signIn() {
 			var body = {
-				email: self.eaddress,
+				email: self.email,
 				password: self.password
 			};
 			self.$http.post('/api/login', body).then(function(response) {

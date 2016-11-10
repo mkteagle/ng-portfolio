@@ -1,10 +1,10 @@
 (function() {
 	angular.module('loginController', [])
 		.controller('loginController', loginController);
-	loginController.$inject =['$http'];
-	function loginController($http) {
+	loginController.$inject =['$http', '$window'];
+	function loginController($http, $window) {
 		var self = this;
-		self.eaddress = '';
+		self.email = '';
 		self.$http = $http;
 		self.register = register;
 		self.signIn = signIn;
@@ -13,7 +13,7 @@
 
 		function signIn() {
 			var body = {
-				email: self.eaddress,
+				email: self.email,
 				password: self.password
 			};
 			self.$http.post('/api/login', body).then(function(response) {
@@ -30,6 +30,7 @@
 						console.log(object);
 						self.$http.post('/api/updateUser', object).then(function(response){
 							console.log(response);
+							$window.location.href = './admin/index.html';
 						})
 					}
 			})

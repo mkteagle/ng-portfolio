@@ -13,6 +13,7 @@
 	app.use('/register', express.static(__dirname + '/register'));
     app.use('/flappy', express.static(__dirname + '/flappy'));
     app.use('/login', express.static(__dirname + '/login'));
+    app.use('/forgot', express.static(__dirname + '/forgot'));
     app.use('/', express.static(__dirname));
     var port = (process.env.PORT || 5000);
 
@@ -75,6 +76,17 @@
 	});
 	app.post('/api/update', function(req, res) {
 
+	});
+	app.post('/api/admin', function(req, res) {
+		
+	});
+	app.post('/api/forgot', function(req, res) {
+
+		firebase.auth().sendPasswordResetEmail(req.body.email).then(function() {
+			res.send('Email Sent');
+		}, function(error) {
+			// An error happened.
+		});
 	});
 
 

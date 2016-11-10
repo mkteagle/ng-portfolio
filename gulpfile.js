@@ -3,12 +3,9 @@
 		sass = require('gulp-ruby-sass'),
 		autoprefixer = require('gulp-autoprefixer'),
 		cssnano = require('gulp-cssnano'),
-		jshint = require('gulp-jshint'),
 		uglify = require('gulp-uglify'),
-		imagemin = require('gulp-imagemin'),
 		rename = require('gulp-rename'),
 		concat = require('gulp-concat'),
-		notify = require('gulp-notify'),
 		cache = require('gulp-cache'),
 		livereload = require('gulp-livereload'),
 		nodemon = require('gulp-nodemon'),
@@ -23,6 +20,8 @@
 			.pipe(gulp.dest('./public/flappy'));
 		gulp.src(['app/login/**/*'])
 			.pipe(gulp.dest('./public/login'));
+		gulp.src(['app/forgot/**/*'])
+			.pipe(gulp.dest('./public/forgot'));
 		gulp.src(['app/register/**/*'])
 			.pipe(gulp.dest('./public/register'));
 		gulp.src(['app/assets/thirdparty/**/*'])

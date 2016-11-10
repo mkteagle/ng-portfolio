@@ -12,20 +12,20 @@
 <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
 <!--Google Fonts-->
 </head>
-<body ng-app="admin">
+<body ng-app="ngLogin">
 <div ng-controller="loginController as lc">
 <!--login form start here-->	
 <h1>Login to mkteagle.com</h1>
 <div class="login">
 	<form>
 		<div class="wrong" ng-show="lc.wrongPassword"></div>
-	<input type="text" ng-model="lc.eaddress" placeholder="Username" />
+	<input type="text" ng-model="lc.email" placeholder="Username" />
 	<input type="password" ng-model="lc.password" value="Password" placeholder="Password" />
 	</form>
 	<div class="forgot">
    	  <label class="checkbox"><input type="checkbox" name="checkbox" checked><i> </i> Keep me signed in</label>
    	  <div class="forgot-para">
-   	  	<a href="#"> <p>Forgot Your Password?</p></a>
+   	  	<a href="./forgot/index.html"> <p>Forgot Your Password?</p></a>
    	  </div>
 	   	<div class="clear"> </div>
 	</div>
