@@ -1,11 +1,16 @@
 (function () {
     var express = require('express');
 	var firebase = require("firebase");
+	var admin = require("firebase-admin");
     var app = express();
     var bodyParser = require('body-parser');
+	var morgan      = require('morgan');
     var nodemailer = require('nodemailer');
+	var jwt = require('jwt-simple');
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
+	// log to console
+	app.use(morgan('dev'));
 
     app.use('/', express.static(__dirname + '/'));
     app.use('/donutclicker', express.static(__dirname + '/donutclicker'));
@@ -16,6 +21,13 @@
     app.use('/forgot', express.static(__dirname + '/forgot'));
     app.use('/', express.static(__dirname));
     var port = (process.env.PORT || 5000);
+	var apiRoutes = express.Router();
+	var serviceAccount = require("./config/mkteagle.json");
+
+	admin.initializeApp({
+		credential: admin.credential.cert(serviceAccount),
+		databaseURL: "https://mkteagle-29e04.firebaseio.com"
+	});
 
 	var config = {
 		apiKey: "AIzaSyAjNim1Q6pCYGjnuLJnwyxfPSGR9mjULNg",
@@ -26,10 +38,10 @@
 	firebase.initializeApp(config);
 
 
-    app.post('/api/contact', function (req, res) {
+    apiRoutes.post('/contact', function (req, res) {
 
     });
-	app.post('/api/register', function(req, res) {
+	apiRoutes.post('/register', function(req, res) {
 		firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).catch(function(error) {
 			if (error) throw error;
 			else {
@@ -38,7 +50,7 @@
 			}
 		});
 	});
-	app.post('/api/login', function(req, res) {
+	apiRoutes.post('/login', function(req, res) {
 		firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
 			.then(function(response) {
 				res.send(response);
@@ -49,7 +61,7 @@
 				}
 			});
 	});
-	app.post('/api/logout', function(req, res) {
+	apiRoutes.post('/logout', function(req, res) {
 		firebase.auth().signOut().then(function() {
 			console.log("Successfully Signed Out");
 			// Sign-out successful.
@@ -58,30 +70,29 @@
 			// An error happened.
 		});
 	});
-	app.post('/api/updateUser', function(req, res) {
+	apiRoutes.post('/updateUser', function(req, res) {
 		firebase.database().ref('users/' + req.body.uid).set({
 			username: req.body.email,
 			uid : req.body.uid
 		});
 		res.send("All Done Successfully");
 	});
-	app.post('/api/addPost', function(req, res) {
+	apiRoutes.post('/addPost', function(req, res) {
 
 	});
-	app.get('/api/all', function(req, res) {
+	apiRoutes.get('/all', function(req, res) {
 
 	});
-	app.delete('/api/delete', function(req, res) {
+	apiRoutes.delete('/delete', function(req, res) {
 
 	});
-	app.post('/api/update', function(req, res) {
+	apiRoutes.post('/update', function(req, res) {
 
 	});
-	app.post('/api/admin', function(req, res) {
+	apiRoutes.post('/admin', function(req, res) {
 		
 	});
-	app.post('/api/forgot', function(req, res) {
-
+	apiRoutes.post('/forgot', function(req, res) {
 		firebase.auth().sendPasswordResetEmail(req.body.email).then(function() {
 			res.send('Email Sent');
 		}, function(error) {
@@ -96,7 +107,7 @@
 // create reusable transporter object using the default SMTP transport
 
 
-    app.post('/api/postEmail', function (req, res) {
+    apiRoutes.post('/postEmail', function (req, res) {
         var transporter = nodemailer.createTransport('smtps://sayhellomkteagle%40gmail.com:saysomething@smtp.gmail.com');
         var mailOptions = {
             from: '"Site Email 👥" <' + req.body.email + '>', // sender address
@@ -119,6 +130,7 @@
     app.get('*', function (req, res) {
         res.sendFile(__dirname + '/index.html');
     });
+	app.use('/api', apiRoutes);
 	app.listen(port, function () {
 		console.log(`App listening on port ${port}...`);
 	});

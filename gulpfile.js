@@ -14,6 +14,8 @@
 		del = require('del');
 
 	gulp.task('html', ['delete'], function() {
+		gulp.src(['app/config/mkteagle.json'])
+			.pipe(gulp.dest('./public/config'));
 		gulp.src(['app/donut-clicker/www/**/*'])
 			.pipe(gulp.dest('./public/donutclicker'));
 		gulp.src(['app/flappy/**/*'])
