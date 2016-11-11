@@ -1,8 +1,8 @@
 (function () {
     var express = require('express');
-	var firebase = require("firebase");
 	var admin = require("firebase-admin");
     var app = express();
+	var firebase = require("firebase");
     var bodyParser = require('body-parser');
 	var morgan      = require('morgan');
     var nodemailer = require('nodemailer');
@@ -23,12 +23,6 @@
     var port = (process.env.PORT || 5000);
 	var apiRoutes = express.Router();
 	var serviceAccount = require("./config/mkteagle.json");
-
-	admin.initializeApp({
-		credential: admin.credential.cert(serviceAccount),
-		databaseURL: "https://mkteagle-29e04.firebaseio.com"
-	});
-
 	var config = {
 		apiKey: "AIzaSyAjNim1Q6pCYGjnuLJnwyxfPSGR9mjULNg",
 		authDomain: "mkteagle-29e04.firebaseapp.com",
@@ -37,6 +31,10 @@
 	};
 	firebase.initializeApp(config);
 
+	admin.initializeApp({
+		credential: admin.credential.cert(serviceAccount),
+		databaseURL: "https://mkteagle-29e04.firebaseio.com"
+	});
 
     apiRoutes.post('/contact', function (req, res) {
 
@@ -50,10 +48,30 @@
 			}
 		});
 	});
+	apiRoutes.post('/checkUser', function(req, res) {
+		admin.auth().verifyIdToken(req.body.token)
+			.then(function(decodedToken) {
+				var uid = decodedToken.uid;
+				res.send(uid);
+			}).catch(function(error) {
+		});
+
+	});
 	apiRoutes.post('/login', function(req, res) {
 		firebase.auth().signInWithEmailAndPassword(req.body.email, req.body.password)
 			.then(function(response) {
-				res.send(response);
+				firebase.auth().currentUser.getToken(/* forceRefresh */ true).then(function(idToken) {
+					res.send(idToken);
+				}).catch(function(err) {
+					if (err) throw err;
+				});
+				// admin.auth().createCustomToken(response.uid)
+				// 	.then(function(customToken) {
+				// 		res.send(customToken);
+				// 	})
+				// 	.catch(function(error) {
+				// 		console.log("Error creating custom token:", error);
+				// 	});
 			})
 			.catch(function(error) {
 				if (error) {
