@@ -7,6 +7,7 @@
 	var morgan      = require('morgan');
     var nodemailer = require('nodemailer');
 	var jwt = require('jwt-simple');
+	var FroalaEditor = require('../node_modules/wysiwyg-editor-node-sdk/lib/froalaEditor.js');
     app.use(bodyParser.urlencoded({extended: true}));
     app.use(bodyParser.json());
 	// log to console
@@ -14,7 +15,8 @@
 
     app.use('/', express.static(__dirname + '/'));
     app.use('/donutclicker', express.static(__dirname + '/donutclicker'));
-    app.use('/blog', express.static(__dirname + '/blog'));
+    app.use('/blogger', express.static(__dirname + '/blogger'));
+	app.use('/uploads', express.static(__dirname + '/uploads'));
 	app.use('/register', express.static(__dirname + '/register'));
     app.use('/flappy', express.static(__dirname + '/flappy'));
     app.use('/login', express.static(__dirname + '/login'));
@@ -46,6 +48,14 @@
 				console.log('Successfully created user');
 				res.send('Successfully Created User');
 			}
+		});
+	});
+	apiRoutes.post('/uploadImage', function(req, res) {
+		FroalaEditor.Image.upload(req, '/uploads/', function(err, data) {
+			if (err) {
+				return res.send(JSON.stringify(err));
+			}
+			res.send(data);
 		});
 	});
 	apiRoutes.post('/checkUser', function(req, res) {
