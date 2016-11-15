@@ -15,7 +15,6 @@
 
     app.use('/', express.static(__dirname + '/'));
     app.use('/donutclicker', express.static(__dirname + '/donutclicker'));
-    app.use('/blogger', express.static(__dirname + '/blogger'));
 	app.use('/uploads', express.static(__dirname + '/uploads'));
 	app.use('/register', express.static(__dirname + '/register'));
     app.use('/flappy', express.static(__dirname + '/flappy'));

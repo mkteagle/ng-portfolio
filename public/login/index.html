@@ -12,14 +12,57 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
           rel='stylesheet' type='text/css'>
     <!--Google Fonts-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/froala_editor.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/froala_style.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/video.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/image.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/code_view.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/colors.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/draggable.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/emoticons.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/file.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/fullscreen.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/line_breaker.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/quick_insert.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/table.min.css" rel="stylesheet">
+    <link href="../assets/thirdparty/froala_editor_sources_2.3.5/css/plugins/image_manager.min.css" rel="stylesheet">
 </head>
 <body ng-app="ngLogin">
 <div ng-controller="loginController as lc">
     <div ui-view></div>
 </div>
 <!--login form end here-->
-<script src="../assets/thirdparty/angular/angular.js"></script>
 <script src="../assets/thirdparty/jquery/dist/jquery.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/froala_editor.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/align.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/char_counter.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/code_view.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/code_beautifier.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/colors.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/draggable.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/emoticons.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/entities.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/file.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/font_family.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/font_size.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/forms.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/fullscreen.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/inline_style.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/line_breaker.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/lists.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/paragraph_format.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/paragraph_style.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/quick_insert.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/quote.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/save.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/table.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/url.min.js"></script>
+<script src="../assets/thirdparty/froala_editor_sources_2.3.5/js/plugins/video.min.js"></script>
+<script src="../assets/thirdparty/froala-changes/image.js"></script>
+<script src="../assets/thirdparty/froala-changes/image_manager.js"></script>
+<script src="../assets/thirdparty/angular/angular.js"></script>
+<script src="../assets/thirdparty/angular-froala/angular-froala.js"></script>
 <script src="../assets/thirdparty/angular-ui-router/release/angular-ui-router.js"></script>
 <script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
 <script src="./scripts/app.config.js"></script>
@@ -29,5 +72,16 @@
 <script src="./scripts/registerController.js"></script>
 <script src="./scripts/blogController.js"></script>
 <script src="./scripts/createController.js"></script>
+<script>
+    $.FroalaEditor.DEFAULTS.key = 'DnoqcfoeoC10obc==';
+</script>
+<script>
+    var $input = $('.form-fieldset > input');
+
+    $input.blur(function (e) {
+        $(this).toggleClass('filled', !!$(this).val());
+    });
+</script>
+
 </body>
 </html>

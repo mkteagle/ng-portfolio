@@ -1,0 +1,17 @@
+<div ng-init="uc.getCategory()"></div>
+<div  aria-label="..." ng-repeat="blog in uc.blogs | filter: uc.category | filter: {posted: true}">
+    <div>
+        <div>
+            <div class="newpost" ng-style="{'background-image' : 'url(' + blog.featured + ')','background-size': 'cover','background-position': 'center center'}"></div>
+            <div class="title" ng-bind="blog.title"></div>
+            <ul>
+                <md-chip><i>{{ blog.category }}</i></md-chip>
+                <md-chip><i>{{ blog.county }}</i></md-chip>
+                <md-chip><i>{{ blog.season }}</i></md-chip>
+            </ul>
+            <p><div class="blogContent messagestyle" froala-view="blog.content | characters: 300: false"></div></p>
+            <div><a ng-href="#/posts/{{blog.param}}">Read more</a></div>
+            <div>Comments</div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+<div class="click-to-tag">
+    <div ng-hide="ul.taggerEnabled">
+        {{ul.selected.tags}}
+        <md-button class="md-primary" ng-click="ul.enableTagger(ul.selected.tags)">Edit</md-button>
+    </div>
+    <div ng-show="ul.taggerEnabled">
+        <input type="text" ng-list = " " ng-trim="false" class="small-12.columns" ng-model="ul.selected.tags" ng-change="ul.getChange(ul.selected)">
+        <md-button class="md-primary" ng-click="ul.tagSave()">Save</md-button>
+        or
+        <md-button class="md-warn" ng-click="ul.disableTagger()">cancel</md-button>
+    </div>
+</div>

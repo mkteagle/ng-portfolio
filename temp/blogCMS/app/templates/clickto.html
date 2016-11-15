@@ -1,0 +1,12 @@
+<div class="click-to-tag">
+    <div ng-hide="ul.editorEnabled">
+        {{ul.selected.date}}
+        <md-button class="md-primary" ng-click="ul.enableEditor(ul.selected.date)">Edit</md-button>
+        </div>
+    <div ng-show="ul.editorEnabled">
+        <md-datepicker ng-model="ul.selected.date" ng-change="ul.getChange(ul.selected)"></md-datepicker>
+        <md-button class="md-primary" ng-click="ul.save()">Save</md-button>
+        or
+        <md-button class="md-warn" ng-click="ul.disableEditor()">cancel</md-button>
+        </div>
+</div>

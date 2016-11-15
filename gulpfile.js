@@ -28,8 +28,6 @@
 			.pipe(gulp.dest('./public/register'));
 		gulp.src(['app/admin/**/*'])
 			.pipe(gulp.dest('./public/admin'));
-		gulp.src(['app/blogger/**/*'])
-			.pipe(gulp.dest('./public/blogger'));
 		gulp.src(['app/uploads/**/*'])
 			.pipe(gulp.dest('./public/uploads'));
 		gulp.src(['app/assets/thirdparty/**/*'])

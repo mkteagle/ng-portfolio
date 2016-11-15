@@ -1,0 +1,49 @@
+<!--<div class="blogposts">-->
+<!--<div class="quote">-->
+    <!--<h1>Angled Edges</h1>-->
+    <!--<p>With 2 Pseudo Elements</p>-->
+<!--</div>-->
+    <div layout="row">
+        <div class="first-column">
+<div class="section boxes">
+    <div class="center">
+        <div ng-repeat="blog in bc.blogs">
+    <div class="blogroll">
+        <div class="item">
+            <div class="thumb"><a ng-href="#/posts/{{blog.param}}"><div class="back newpost centerimg" ng-style="{'background-image' : 'url(' + blog.featured + ')','background-size': 'cover','background-position': 'center center'}"></div></a></div>
+            <div class="details">
+                <div class="date2">
+                    <span class="day">{{ blog.date | dated | date: 'dd'}}</span>
+                    <span class="month">{{ blog.date | dated | date: 'MM'}}</span>
+                </div>
+                <div class="post-title"><h3>{{ blog.title }}</h3></div>
+                <p><div class="blogs" style="" ng-bind="blog.content | htmlToPlaintext | characters: 300: false"></div></p>
+                <p><a ng-href="#/posts/{{blog.param}}" class="button">Read Article <i class="icon ion-ios-arrow-right"></i></a></p>
+            </div>
+        </div>
+    </div>
+    <!--<div class="blogPost">-->
+                <!--<div class="center">-->
+                    <!--<ul class="blogul">-->
+                        <!--<md-chip class="blogli"><i><a ng-href="#/categories/{{blog.catParam}}">{{ blog.category }}</a></i></md-chip> /-->
+                        <!--<md-chip class="blogli"><i><a ng-href="#/county/{{blog.cParam}}">{{ blog.county }}</a></i></md-chip> /-->
+                        <!--<md-chip class="blogli"><i>{{ blog.season }}</i></md-chip>-->
+                    <!--</ul>-->
+                <!--</div>-->
+            <!--<div class="postdate center">Posted On {{ blog.date | dated | date : 'fullDate' }}</div>-->
+            <!--<div class="title center"><a ng-href="#/posts/{{blog.param}}">{{blog.title}}</a></div>-->
+            <!--<div class="newpost centerimg" ng-style="{'background-image' : 'url(' + blog.featured + ')','background-size': 'cover','background-position': 'center center'}"></div>-->
+            <!--<p><div class="messagestyle" ng-bind="blog.content | htmlToPlaintext | characters: 300: false"></div></p>-->
+            <!--<div class="boxed"><a ng-href="#/posts/{{blog.param}}">Read more ></a></div>-->
+            <!--{{blog.comments.length}} Comments-->
+        <!--</div>-->
+    </div>
+        </div>
+    </div>
+    </div>
+        <div class="second-column">
+            <hr>
+            <h4>Missing</h4>
+        </div>
+    </div>
+<!--</div>-->

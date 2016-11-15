@@ -1,0 +1,88 @@
+<div flex layout row>
+    <div ng-include="'./src/templates/bloglist.html'"></div>
+    <div flex layout="column" tabIndex="-1" role="main">
+
+        <md-toolbar aria-label="..." id="openToggles" layout="row">
+            <md-button aria-label="..." class="menu" hide-gt-sm ng-click="ul.toggleList()" aria-label="Show User List">
+                <md-icon md-svg-icon="menu" ></md-icon>
+            </md-button>
+            <div class="header">
+                <!--<md-button aria-label="..." class="menu" ng-click="ul.toggleIt()" aria-label="Show Menu">-->
+                <!--<md-icon aria-label="..." id="menuitem" md-svg-icon="menu" ></md-icon>-->
+                <!--</md-button>-->
+                <strong><input type="text" aria-label="..." ng-model="ul.selected.title" id="newContainer" ng-disabled="ul.blogs.length == 0" placeholder="Title..." ng-change="ul.getChange(ul.selected); ul.addPostParam(ul.selected)"></strong>
+            </div>
+            <div class="right">
+                <div ng-include="'./src/templates/login.html'"></div>
+            </div>
+        </md-toolbar>
+        <md-content flex id="content" ng-hide="ul.blogs.length == 0">
+            <div layout="row">
+                <div flex class="leftCol">
+                    <div class="panel">
+                        <div layout="row">
+                            <md-input-container aria-label="..." flex>
+                                <md-select-label aria-label="..." class="gray">County</md-select-label>
+                                <md-select aria-label="..." ng-model="ul.selected.county" ng-change="ul.getChange(ul.selected)">
+                                    <md-option aria-label="..." class="blackify" ng-repeat="county in ul.counties">{{ county.name }}</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container flex aria-label="...">
+                                <md-select-label aria-label="..." class="gray" aria-label="...">Category</md-select-label>
+                                <md-select aria-label="..." ng-model="ul.selected.category" ng-change="ul.getChange(ul.selected)" aria-label="...">
+                                    <md-option aria-label="..." class="blackify" ng-repeat="category in ul.categories" aria-label="...">{{ category.name }}</md-option>
+                                </md-select>
+                            </md-input-container>
+                            <md-input-container flex>
+                                <md-select-label class="gray" aria-label="...">Season</md-select-label>
+                                <md-select ng-model="ul.selected.season" ng-change="ul.getChange(ul.selected)" aria-label="...">
+                                    <md-option class="blackify" ng-repeat="season in ul.seasons" aria-label="...">{{ season.name }}</md-option>
+                                </md-select>
+                            </md-input-container>
+                        </div>
+                        <div layout="row">
+                            <md-input-container class="smalleriC" flex>
+                                <md-radio-group aria-label="..." ng-model="ul.selected.posted" ng-change="ul.getChange(ul.selected)">
+                                    <md-radio-button ng-value="true" aria-label="Label 1">
+                                        Posted
+                                    </md-radio-button>
+                                    <md-radio-button ng-value="false" aria-label="Green">
+                                        Draft
+                                    </md-radio-button>
+                                </md-radio-group>
+                            </md-input-container>
+                            <md-input-container class="smalleriC" flex><md-checkbox md-no-ink aria-label="Date Night" ng-model="ul.selected.datenight" ng-change="ul.getChange(ul.selected)" class="md-primary">Date Night</md-checkbox></md-input-container>
+                            <md-input-container class="smalleriC" flex><md-checkbox md-no-ink aria-label="Destinations" ng-model="ul.selected.destination" ng-change="ul.getChange(ul.selected)" class="md-primary">Destination</md-checkbox></md-input-container>
+                            <md-input-container class="smalleriC" flex>
+                                <md-button ng-model="ul.customFullscreen" ng-click="ul.showAdvanced($event, ul.selected)" aria-label="Fullscreen Custom Dialog">Preview Post</md-button>
+                            </md-input-container>
+                            <!--<md-datepicker aria-label="..." ng-model="ul.selected.postDate"></md-datepicker>-->
+                        </div>
+
+
+                        <hr/>
+                        <div class="field">
+                            <md-input-container class="md-block md-input-has-value">
+                                <textarea aria-label="..." froala id="taStyle" ng-model="ul.selected.content" ng-change="ul.getChange(ul.selected)" aria-invalid="false" ng-trim="false"></textarea>
+                            </md-input-container>
+
+                        </div>
+                    </div>
+                </div>
+                <div flex class="rightCol">
+                    <div class="panel callout" ng-hide="ul.blogs.length == 0">
+                        <div class="title">
+                            <span ng-bind="ul.selected.title"></span>
+                        </div>
+                        <div id="authorDateLine">
+                            <p><span ng-repeat="tag in ul.selected.tags track by $index"><span ng-class-even="'even'" ng-class-odd="'odd'"><span ng-bind="tag" class="tag"></span></span></span>
+                                <em> By <a ui-sref="jen" href="{{ul.selected.url}}"><span ng-bind="ul.selected.name"></span></a></em> On <span ng-bind="ul.selected.date | date:'MM/dd/yyyy'"></span></p><span><md-icon md-svg-icon="{{ul.selected.avatar}}" class="avatar"></md-icon></span>
+                        </div>
+                        <hr />
+                        <p><div class="messagestyle" froala-view="ul.selected.content"></div></p>
+                    </div>
+                </div>
+            </div>
+        </md-content>
+    </div>
+</div>

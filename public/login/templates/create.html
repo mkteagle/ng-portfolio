@@ -1,7 +1,25 @@
-<h2>Create A New Post</h2>
-<div><label>Blog Title: </label><input type="text" placeholder="Title" ng-model="cc.blogTitle"></div>
-<div><label>Featured Image: </label><input type="text" placeholder="Title" ng-model="cc.featuredImage"></div>
-<div><label>Blog Content: </label><textarea ng-model="cc.blogContent"></textarea></div>
-<div><button ng-click="cc.saveBlog()">Save Blog</button></div>
-<div><button ng-click="cc.logout()">Logout</button></div>
-<div><button ng-click="cc.manageBlogs()">Back to Blogs</button></div>
+<div class="container" >
+    <h1>mkteagle.com</h1>
+    <h2>Add a new blog</h2>
+    <form class="form" action="#">
+
+        <fieldset class="form-fieldset ui-input __second">
+            <input type="text" ng-model="cc.blogTitle" id="title" tabindex="0" />
+            <label for="title">
+                <span data-text="Title">Title</span>
+            </label>
+        </fieldset>
+
+        <div class="form-footer">
+            <input type="submit" class="btn" ng-click="cc.saveBlog()" value="Save Entry" />
+        </div>
+    </form>
+</div>
+<textarea rows="100" ng-model="cc.blogContent" class="blogContent" froala="froalaOptions"></textarea>
+</div>
+<!--<div><label>Blog Title: </label><input type="text" placeholder="Title" ng-model="cc.blogTitle"></div>-->
+<!--<div><label>Featured Image: </label><input type="text" placeholder="Title" ng-model="cc.featuredImage"></div>-->
+<!--<div><label>Blog Content: </label><textarea ng-model="cc.blogContent"></textarea></div>-->
+<!--<div><button ng-click="cc.saveBlog()">Save Blog</button></div>-->
+<!--<div><button ng-click="cc.logout()">Logout</button></div>-->
+<!--<div><button ng-click="cc.manageBlogs()">Back to Blogs</button></div>-->

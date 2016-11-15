@@ -14,6 +14,8 @@
         self.featuredImage = '';
         self.blogContent = '';
         self.saveBlog = saveBlog;
+        self.froalaOptions = {};
+        self.blogEditor = '';
         self.onInit = onInit;
 
         function onInit() {

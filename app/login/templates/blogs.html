@@ -1,6 +1,6 @@
 <h4>You made it to the blogs</h4>
 <pre class="preclass">
-    {{ bc.blogs | json }}
+    <span class="wrap">{{ bc.blogs | json }}</span>
 </pre>
 <div ng-repeat="blog in bc.blogs">
     <div>{{ blog.title }}</div>

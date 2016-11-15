@@ -1,0 +1,128 @@
+<div class="content" ng-init="bc.initPost()">
+    <div class="titled"><span class="spantled">Blog Title</span>
+        <div class="header">
+            <div class="frow">
+                <input type="text" class="title" ng-model="bc.post.title" placeholder="Title..."
+                       ng-change="bc.getChange(bc.post); bc.addPostParam(bc.post)">
+                <div flex="33">
+                    <md-button ng-click="bc.showAdvanced($event, bc.post)" aria-label="Fullscreen Custom Dialog">Preview
+                        Post
+                    </md-button>
+                </div>
+            </div>
+        </div>
+        <span class="permalink"><strong>Permalink: </strong>http://www.doingutahdaily.com/posts/{{bc.post.param}}</span>
+    </div>
+    <div class="titled">
+        <div class="heads-gray">
+        <div class="frow padding">
+            <div class="marginized" ng-class="{'active-bottom':bc.isActive === 'options'}"><span class="spantled" ng-click="bc.isActive = 'options'">Options</span></div>
+            <div class="marginized" ng-class="{'active-bottom':bc.isActive === 'views'}"><span class="spantled" ng-click="bc.isActive = 'views'">Views</span></div>
+            <div class="marginized" ng-class="{'active-bottom':bc.isActive === 'posted'}"><span class="spantled" ng-click="bc.isActive = 'posted'">Posted</span></div>
+            <div class="marginized" ng-class="{'active-bottom':bc.isActive === 'featured'}"><span class="spantled" ng-click="bc.isActive = 'featured'">Featured Image</span></div>
+            </div>
+        </div>
+        <div class="frow" ng-if="bc.isActive == 'options'">
+            <md-input-container layout-padding aria-label="..." flex>
+                <md-select-label aria-label="..." class="gray">County</md-select-label>
+                <md-select aria-label="..." ng-model="bc.post.county" ng-change="bc.getChange(bc.post)">
+                    <md-option aria-label="..." class="blackify" ng-repeat="county in bc.counties"
+                               ng-click="bc.addCountyParams(bc.post, county.param)">{{ county.name }}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <md-input-container layout-padding flex aria-label="...">
+                <md-select-label aria-label="..." class="gray" aria-label="...">Category</md-select-label>
+                <md-select aria-label="..." ng-model="bc.post.category" ng-change="bc.getChange(bc.post)"
+                           aria-label="...">
+                    <md-option aria-label="..." class="blackify" ng-repeat="category in bc.categories"
+                               ng-click="bc.createCategory(category.name)" aria-label="...">{{ category.name }}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+            <button ng-if="bc.post.category === 'Add'" ng-click="bc.addCategory(bc.categoryName)">Add Category
+            </button>
+            <input type="text" ng-if="bc.post.category === 'Add'" ng-model="bc.categoryName"/>
+            <md-input-container layout-padding flex>
+                <md-select-label class="gray" aria-label="...">Season</md-select-label>
+                <md-select ng-model="bc.post.season" ng-change="bc.getChange(bc.post)" aria-label="...">
+                    <md-option class="blackify" ng-repeat="season in bc.seasons" aria-label="...">{{ season.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div class="frow" ng-if="bc.isActive == 'views'">
+            <h2>You are here</h2>
+        </div>
+        <div class="frow" ng-if="bc.isActive == 'posted'">
+            <md-input-container layout-padding>
+                <md-radio-group aria-label="..." ng-model="bc.post.posted" ng-change="bc.getChange(bc.post)">
+                    <md-radio-button ng-value="true" aria-label="Label 1">
+                        Posted
+                    </md-radio-button>
+                    <md-radio-button ng-value="false" aria-label="Green">
+                        Draft
+                    </md-radio-button>
+                </md-radio-group>
+
+            </md-input-container>
+        </div>
+        <div class="frow" ng-if="bc.isActive == 'featured'">
+            <div class="stitched">
+                <div class="fi-preview-red" ng-if="bc.post.featured == null || bc.post.featured == ''">Please upload
+                    a featured image
+                </div>
+                <form novalidate>
+                    <div>
+                        <p>
+                            <label class="custom-file-upload centerimg">
+                                <input type="file" class="inputfile" ngf-select="bc.uploadFiles($files)"
+                                       ngf-multiple="true">
+                                <div class="center">Image</div>
+                            </label>
+                        </p>
+                    </div>
+                    <div ng-show="Files.length > 0">
+                        <div ng-repeat="file in bc.Files">
+                            File:
+                            <div>
+                                {{bc.file.name}} {{bc.file.$error}} {{bc.file.$errorParam}}
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0"
+                                     aria-valuemax="100" style="width: {{file.Progress}}%;">
+                                    {{bc.file.Progress | number:0}}%
+                                </div>
+                            </div>
+                            <div class="alert alert-info" role="alert"
+                                 ng-show="bc.file.Progress == 100 && !bc.file.Sbccess">Processing, please wait...
+                            </div>
+                            <div class="alert alert-sbccess" role="alert" ng-show="bc.file.Sbccess">Upload
+                                Complete!
+                            </div>
+                        </div>
+                    </div>
+                </form>
+                <div class="fi-preview"
+                     ng-style="{'background-image' : 'url(' + bc.post.featured + ')','background-size': 'cover','background-position': 'center center'}"></div>
+                <button ng-if="bc.post.featured != null || bc.post.featured != ''"
+                        ng-hide="bc.post.featured == null || bc.post.featured == ''" ng-click="bc.deleteFeatured()">
+                    Delete
+                </button>
+            </div>
+        </div>
+    </div>
+        <div class="titled">
+            <div class="field">
+                <md-input-container class="md-block md-input-has-value">
+                    <div class="heads">Text - <span><strong>Words: <span ng-bind="bc.countOf(bc.post.content)">, </span><span></span></strong></span>
+                    </div>
+                    <textarea aria-label="..." froala id="taStyle" ng-model="bc.post.content"
+                              ng-change="bc.getChange(bc.post)" aria-invalid="false" ng-trim="false"></textarea>
+                </md-input-container>
+
+            </div>
+        </div>
+    </div>
+</div>
+</div>

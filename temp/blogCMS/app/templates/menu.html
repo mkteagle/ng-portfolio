@@ -1,0 +1,20 @@
+<div class="flexbox" ng-controller="BlogController as uc">
+<div class="menu-wrap">
+    <nav class="menu">
+        <ul class="clearfix">
+            <li><a href="#">ABOUT</a></li>
+            <li><a href="#">LOGIN</a></li>
+            <li><a href="#">LATEST POST</a></li>
+            <li><a href="#">EDITOR</a></li>
+            <li><a href="#">VIEW BLOG</a></li>
+            <li><a href="#">ALL BLOGS</a></li>
+            <li><a href="#">COUNTIES</a>
+                <ul class="sub-menu">
+                    <li ng-repeat="blog in uc.blogs | unique:'county'" ng-if="blog.county"><a ng-href="#/counties/{{ blog.cParam }}" ng-click="uc.getCounties(blog.cParam)">{{ blog.county }}</a></li>
+                </ul>
+            </li>
+            <li><a href="#">SEASONS</a></li>
+        </ul>
+    </nav>
+</div>
+</div>
