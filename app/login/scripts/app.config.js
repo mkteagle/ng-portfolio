@@ -13,6 +13,11 @@
                 templateUrl: "./templates/home.html",
                 controller: "adminController as ac"
             })
+	        .state("forgot", {
+		        url: "/forgot",
+		        templateUrl: "./templates/forgot.html",
+		        controller: "forgotController as fc"
+	        })
             .state("admin", {
                 url: "/admin",
                 templateUrl: "./templates/admin.html"

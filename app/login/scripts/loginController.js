@@ -12,6 +12,8 @@
 		self.wrongPassword = '';
 		self.onInit = onInit;
 		self.logout = logout;
+		self.forgotPage = forgotPage;
+
 		function onInit() {
 			console.log($localStorage.currentUser);
 		}
@@ -34,7 +36,9 @@
 					});
 			})
 		}
-
+		function forgotPage() {
+			$location.path('/forgot');
+		}
 		function logout() {
 			delete $localStorage.currentUser;
 			self.$http.defaults.headers.common.Authorization = '';

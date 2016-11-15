@@ -11,6 +11,7 @@
 			'registerController',
 			'blogController',
 			"createController",
-			"blogFilter"
+			"blogFilter",
+			"forgotController"
 		])
 })();

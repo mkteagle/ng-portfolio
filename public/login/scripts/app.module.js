@@ -10,6 +10,8 @@
 			'adminController',
 			'registerController',
 			'blogController',
-			"createController"
+			"createController",
+			"blogFilter",
+			"forgotController"
 		])
 })();

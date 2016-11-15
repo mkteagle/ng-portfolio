@@ -130,9 +130,11 @@
 		firebase.database().ref('blogs/' + req.body.uid).set({
 			author: req.body.author,
 			createdDate: req.body.createdDate,
+			createdTime: req.body.createdTime,
 			title: req.body.title,
 			featuredImg: req.body.featuredImage,
-			content: req.body.content
+			content: req.body.content,
+			param: req.body.param
 		});
 		res.send("All Done Successfully");
 

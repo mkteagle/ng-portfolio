@@ -1,8 +1,8 @@
 (function () {
     angular.module('createController', [])
         .controller('createController', createController);
-    createController.$inject = ['$http', '$localStorage', '$location'];
-    function createController($http, $localStorage, $location) {
+    createController.$inject = ['$http', '$localStorage', '$location', '$filter'];
+    function createController($http, $localStorage, $location, $filter) {
         var self = this;
         self.$http = $http;
         self.authenticated = null;
@@ -45,13 +45,20 @@
             $location.path('/blogs');
         }
         function saveBlog() {
+	        var titleParams = $filter('removeSpacesThenLowercase')(self.blogTitle);
+	        var date = Date.now();
+	        var uids = $filter('removeSpaces')(date + self.blogTitle);
+	        var newdate = $filter('date')(new Date(), 'MM/dd/yyyy');
+	        var time = $filter('date')(new Date(), 'HH:mm:ss');
             var object = {
-                uid: Date.now(),
-                createdDate: Date.now(),
+                uid: uids,
+                createdDate: newdate,
+	            createdTime: time,
                 title: self.blogTitle,
                 featuredImage: self.featuredImage,
                 content: self.blogContent,
-                author: self.displayName
+                author: self.displayName,
+	            param: titleParams
             };
             self.$http.post('/api/createBlog', object).then(function(response) {
                 console.log(response);
