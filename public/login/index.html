@@ -1,49 +1,33 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Login</title>
-<!-- Custom Theme files -->
-<link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
-<!-- Custom Theme files -->
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<!--Google Fonts-->
-<link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
-<!--Google Fonts-->
+    <title>mkteagle.com admin</title>
+    <!-- Custom Theme files -->
+    <link href="css/style.css" rel="stylesheet" type="text/css" media="all"/>
+    <!-- Custom Theme files -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <!--Google Fonts-->
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800'
+          rel='stylesheet' type='text/css'>
+    <!--Google Fonts-->
 </head>
 <body ng-app="ngLogin">
 <div ng-controller="loginController as lc">
-<!--login form start here-->	
-<h1>Login to mkteagle.com</h1>
-<div class="login">
-	<form>
-		<div class="wrong" ng-show="lc.wrongPassword"></div>
-	<input type="text" ng-model="lc.email" placeholder="Username" />
-	<input type="password" ng-model="lc.password" value="Password" placeholder="Password" />
-	</form>
-	<div class="forgot">
-		<div class="backto">
-			<a href="../index.html">← Back to mkteagle.com</a>
-		</div>
-   	  <div class="forgot-para">
-   	  	<a href="../forgot/index.html"> <p>Forgot Your Password?</p></a>
-   	  </div>
-	   	<div class="clear"> </div>
-	</div>
-	<form class="hover">
-	<label  class="hvr-sweep-to-bottom">
-	<input type="submit" ng-click="lc.signIn()" value="Login"/>
-	</label>
-	</form>
-	<!--<h3>Not a member? <a href="#">Sign up now!</a>  </h3>-->
-</div>
+    <div ui-view></div>
 </div>
 <!--login form end here-->
-	<script src="../assets/thirdparty/angular/angular.js"></script>
-	<script src="../assets/thirdparty/jquery/dist/jquery.min.js"></script>
-	<script src="./scripts/app.config.js"></script>
-	<script src="./scripts/app.module.js"></script>
-	<script src="./scripts/loginController.js"></script>
+<script src="../assets/thirdparty/angular/angular.js"></script>
+<script src="../assets/thirdparty/jquery/dist/jquery.min.js"></script>
+<script src="../assets/thirdparty/angular-ui-router/release/angular-ui-router.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.6/ngStorage.min.js"></script>
+<script src="./scripts/app.config.js"></script>
+<script src="./scripts/app.module.js"></script>
+<script src="./scripts/loginController.js"></script>
+<script src="./scripts/adminController.js"></script>
+<script src="./scripts/registerController.js"></script>
+<script src="./scripts/blogController.js"></script>
+<script src="./scripts/createController.js"></script>
 </body>
 </html>

@@ -3,6 +3,12 @@
 	angular
 		.module('ngLogin', [
 			'loginController',
-			'ngLogin.config'
+			'ui.router',
+			'ngStorage',
+			'ngLogin.config',
+			'adminController',
+			'registerController',
+			'blogController',
+			"createController"
 		])
 })();

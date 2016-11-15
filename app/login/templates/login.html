@@ -1,0 +1,24 @@
+<!--login form start here-->
+<h1>Login to mkteagle.com</h1>
+<div class="login">
+    <form>
+        <div class="wrong" ng-show="lc.wrongPassword"></div>
+        <input type="text" ng-model="lc.email" placeholder="Username"/>
+        <input type="password" ng-model="lc.password" value="Password" placeholder="Password"/>
+    </form>
+    <div class="forgot">
+        <div class="backto">
+            <a href="../index.html">← Back to mkteagle.com</a>
+        </div>
+        <div class="forgot-para">
+            <a href="../forgot/index.html"><p>Forgot Your Password?</p></a>
+        </div>
+        <div class="clear"></div>
+    </div>
+    <form class="hover">
+        <label class="hvr-sweep-to-bottom">
+            <input type="submit" ng-click="lc.signIn()" value="Login"/>
+        </label>
+    </form>
+    <!--<h3>Not a member? <a href="#">Sign up now!</a>  </h3>-->
+</div>

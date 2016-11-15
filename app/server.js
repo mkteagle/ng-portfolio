@@ -35,18 +35,38 @@
 		credential: admin.credential.cert(serviceAccount),
 		databaseURL: "https://mkteagle-29e04.firebaseio.com"
 	});
+	
 
     apiRoutes.post('/contact', function (req, res) {
 
     });
-	apiRoutes.post('/register', function(req, res) {
-		firebase.auth().createUserWithEmailAndPassword(req.body.email, req.body.password).catch(function(error) {
-			if (error) throw error;
-			else {
-				console.log('Successfully created user');
-				res.send('Successfully Created User');
-			}
-		});
+	apiRoutes.post('/locateUser', function(req, res) {
+		admin.auth().getUser(req.body.uid)
+			.then(function(userRecord) {
+				// See the tables below for the contents of userRecord
+				console.log("Successfully fetched user data:", userRecord.toJSON());
+				res.send(userRecord.toJSON());
+			})
+			.catch(function(error) {
+				console.log("Error fetching user data:", error);
+			});
+	});
+	apiRoutes.post('/createUser', function(req, res) {
+		admin.auth().createUser({
+			email: req.body.email,
+			emailVerified: false,
+			password: req.body.password,
+			displayName: req.body.displayName,
+			disabled: false
+		})
+			.then(function(userRecord) {
+				console.log("Successfully created new user:", userRecord.uid);
+				res.send("Successfully created user");
+			})
+			.catch(function(error) {
+				console.log("Error creating new user:", error);
+				res.send(error);
+			});
 	});
 	apiRoutes.post('/checkUser', function(req, res) {
 		admin.auth().verifyIdToken(req.body.token)
@@ -65,13 +85,6 @@
 				}).catch(function(err) {
 					if (err) throw err;
 				});
-				// admin.auth().createCustomToken(response.uid)
-				// 	.then(function(customToken) {
-				// 		res.send(customToken);
-				// 	})
-				// 	.catch(function(error) {
-				// 		console.log("Error creating custom token:", error);
-				// 	});
 			})
 			.catch(function(error) {
 				if (error) {
@@ -81,12 +94,21 @@
 	});
 	apiRoutes.post('/logout', function(req, res) {
 		firebase.auth().signOut().then(function() {
-			console.log("Successfully Signed Out");
-			// Sign-out successful.
 		}, function(error) {
 			if (error) throw error;
-			// An error happened.
 		});
+	});
+	apiRoutes.post('/adminUpdate', function(req, res) {
+		admin.auth().updateUser(req.body.uid, {
+			displayName: req.body.displayName,
+		})
+			.then(function(userRecord) {
+				console.log("Successfully updated user", userRecord.toJSON());
+				res.send("User updated!!")
+			})
+			.catch(function(error) {
+				console.log("Error updating user:", error);
+			});
 	});
 	apiRoutes.post('/updateUser', function(req, res) {
 		firebase.database().ref('users/' + req.body.uid).set({
@@ -95,10 +117,23 @@
 		});
 		res.send("All Done Successfully");
 	});
-	apiRoutes.post('/addPost', function(req, res) {
+	apiRoutes.post('/createBlog', function(req, res) {
+		firebase.database().ref('blogs/' + req.body.uid).set({
+			author: req.body.author,
+			createdDate: req.body.createdDate,
+			title: req.body.title,
+			featuredImg: req.body.featuredImage,
+			content: req.body.content
+		});
+		res.send("All Done Successfully");
 
 	});
-	apiRoutes.get('/all', function(req, res) {
+	apiRoutes.post('/all', function(req, res) {
+		firebase.database().ref('blogs/').once('value').then(function(snapshot) {
+			res.send(snapshot.val());
+		}).catch(function(err) {
+			if (err) throw err;
+		})
 
 	});
 	apiRoutes.delete('/delete', function(req, res) {
