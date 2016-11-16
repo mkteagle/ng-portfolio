@@ -5,6 +5,8 @@
 <div ng-repeat="blog in bc.blogs">
     <div>{{ blog.title }}</div>
     <div>by <span>{{ blog.author }}</span></div>
+    <div froala-view="blog.content"></div>
+    <div><a ng-href="#/edit/{{blog.param}}">Edit Blog</a></div>
 </div>
 <div><button ng-click="bc.createPost()">Add New Blog</button></div>
 <div><button ng-click="bc.adminPage()">Back to Admin Page</button></div>

@@ -1,8 +1,8 @@
 (function () {
     angular.module('blogController', [])
         .controller('blogController', blogController);
-    blogController.$inject = ['$http', '$localStorage', '$location'];
-    function blogController($http, $localStorage, $location) {
+    blogController.$inject = ['$http', '$localStorage', '$location', '$stateParams'];
+    function blogController($http, $localStorage, $location, $stateParams) {
         var self = this;
         self.$http = $http;
         self.authenticated = null;
@@ -20,7 +20,6 @@
                     uid: $localStorage.currentUser.uid
                 };
                 self.$http.post('/api/locateUser', object).then(function(response) {
-                    console.log(response.data);
                     self.displayName = response.data.displayName;
                     var object = {};
                     self.$http.post('/api/all', object).then(function(response) {

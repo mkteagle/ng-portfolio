@@ -11,7 +11,7 @@
         self.manageBlogs = manageBlogs;
         self.displayName = '';
         self.blogTitle = '';
-        self.featuredImage = '';
+        self.featuredImage = 'if nothing say nothing.jpg';
         self.blogContent = '';
         self.saveBlog = saveBlog;
         self.froalaOptions = {};

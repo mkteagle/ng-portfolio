@@ -22,6 +22,11 @@
                 url: "/admin",
                 templateUrl: "./templates/admin.html"
             })
+            .state("edit", {
+                url: "/edit/:param",
+                templateUrl: "./templates/edit.html",
+                controller: "editController as ec"
+            })
             .state("blogs", {
                 url: "/blogs",
                 templateUrl: "./templates/blogs.html",

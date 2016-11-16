@@ -128,11 +128,12 @@
 	});
 	apiRoutes.post('/createBlog', function(req, res) {
 		firebase.database().ref('blogs/' + req.body.uid).set({
+			uid: req.body.uid,
 			author: req.body.author,
 			createdDate: req.body.createdDate,
 			createdTime: req.body.createdTime,
 			title: req.body.title,
-			featuredImg: req.body.featuredImage,
+			featuredImage: req.body.featuredImage,
 			content: req.body.content,
 			param: req.body.param
 		});
@@ -150,8 +151,19 @@
 	apiRoutes.delete('/delete', function(req, res) {
 
 	});
-	apiRoutes.post('/update', function(req, res) {
-
+	apiRoutes.post('/updateBlog', function(req, res) {
+		console.log(req.body);
+        firebase.database().ref('blogs/' + req.body.uid).set({
+        	uid: req.body.uid,
+            author: req.body.author,
+            createdDate: req.body.createdDate,
+            createdTime: req.body.createdTime,
+            title: req.body.title,
+            featuredImage: req.body.featuredImage,
+            content: req.body.content,
+            param: req.body.param
+        });
+        res.send("All Done Successfully");
 	});
 	apiRoutes.post('/admin', function(req, res) {
 		
@@ -169,8 +181,6 @@
 
 
 // create reusable transporter object using the default SMTP transport
-
-
     apiRoutes.post('/postEmail', function (req, res) {
         var transporter = nodemailer.createTransport('smtps://sayhellomkteagle%40gmail.com:saysomething@smtp.gmail.com');
         var mailOptions = {

@@ -12,6 +12,7 @@
 			'blogController',
 			"createController",
 			"blogFilter",
-			"forgotController"
+			"forgotController",
+			"editController"
 		])
 })();
