@@ -934,3 +934,6 @@ h2 {
     word-wrap: break-word;
     font-size: .5em; !important
 }
+.padding {
+	margin-top: 20px;
+}

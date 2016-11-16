@@ -1,10 +1,15 @@
 <!--login form start here-->
 <h1>Login to mkteagle.com</h1>
 <div class="login">
-    <form>
+    <form class="hover" ng-submit="lc.signIn()">
         <div class="wrong" ng-show="lc.wrongPassword"></div>
         <input type="text" ng-model="lc.email" placeholder="Username"/>
         <input type="password" ng-model="lc.password" value="Password" placeholder="Password"/>
+	    <div class="padding">
+	    <label class="hvr-sweep-to-bottom">
+		    <input type="submit" value="Login"/>
+	    </label>
+	    </div>
     </form>
     <div class="forgot">
         <div class="backto">
@@ -15,10 +20,5 @@
         </div>
         <div class="clear"></div>
     </div>
-    <form class="hover">
-        <label class="hvr-sweep-to-bottom">
-            <input type="submit" ng-click="lc.signIn()" value="Login"/>
-        </label>
-    </form>
     <!--<h3>Not a member? <a href="#">Sign up now!</a>  </h3>-->
 </div>

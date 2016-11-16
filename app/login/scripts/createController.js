@@ -46,14 +46,9 @@
         }
         function saveBlog() {
 	        var titleParams = $filter('removeSpacesThenLowercase')(self.blogTitle);
-	        var date = Date.now();
-	        var uids = $filter('removeSpaces')(date + self.blogTitle);
-	        var newdate = $filter('date')(new Date(), 'MM/dd/yyyy');
-	        var time = $filter('date')(new Date(), 'HH:mm:ss');
+	        var uids = $filter('removeSpaces')(Date.now() + self.blogTitle);
             var object = {
                 uid: uids,
-                createdDate: newdate,
-	            createdTime: time,
                 title: self.blogTitle,
                 featuredImage: self.featuredImage,
                 content: self.blogContent,

@@ -55,14 +55,9 @@
         }
         function updateBlog() {
             var titleParams = $filter('removeSpacesThenLowercase')(self.post.title);
-            var date = Date.now();
             // var uids = $filter('removeSpaces')(date + self.post.title);
-            var newdate = $filter('date')(new Date(), 'MM/dd/yyyy');
-            var time = $filter('date')(new Date(), 'HH:mm:ss');
             var object = {
                 uid: self.post.uid,
-                createdDate: newdate,
-                createdTime: time,
                 title: self.post.title,
                 featuredImage: self.post.featuredImage,
                 content: self.post.content,

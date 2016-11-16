@@ -130,8 +130,7 @@
 		firebase.database().ref('blogs/' + req.body.uid).set({
 			uid: req.body.uid,
 			author: req.body.author,
-			createdDate: req.body.createdDate,
-			createdTime: req.body.createdTime,
+			created: Date.now(),
 			title: req.body.title,
 			featuredImage: req.body.featuredImage,
 			content: req.body.content,
@@ -156,8 +155,7 @@
         firebase.database().ref('blogs/' + req.body.uid).set({
         	uid: req.body.uid,
             author: req.body.author,
-            createdDate: req.body.createdDate,
-            createdTime: req.body.createdTime,
+	        created: Date.now(),
             title: req.body.title,
             featuredImage: req.body.featuredImage,
             content: req.body.content,

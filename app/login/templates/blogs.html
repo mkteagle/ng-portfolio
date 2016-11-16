@@ -1,8 +1,8 @@
 <h4>You made it to the blogs</h4>
 <pre class="preclass">
-    <span class="wrap">{{ bc.blogs | json }}</span>
+    <span class="wrap">{{ bc.blogs | orderByFilter: 'created' : true }}</span>
 </pre>
-<div ng-repeat="blog in bc.blogs">
+<div ng-repeat="blog in bc.blogs| orderByFilter: 'created' : true">
     <div>{{ blog.title }}</div>
     <div>by <span>{{ blog.author }}</span></div>
     <div froala-view="blog.content"></div>
