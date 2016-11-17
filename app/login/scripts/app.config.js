@@ -43,6 +43,11 @@
                 templateUrl: "./templates/register.html",
                 controller: "registerController as rc"
             })
+            .state("post", {
+                url: "/post/:param",
+                templateUrl: "./templates/post.html",
+                controller: "postController as pc"
+            })
             .state("login", {
                 url: "/login",
                 templateUrl: "./templates/login.html",

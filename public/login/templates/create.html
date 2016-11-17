@@ -9,6 +9,12 @@
                 <span data-text="Title">Title</span>
             </label>
         </fieldset>
+        <div>
+            <form>
+                <input type="file" ng-file-select="fileSelected($files)" accept="'image/*'">
+                <button ng-click="cc.uploadFeatured()">Upload</button>
+            </form>
+        </div>
 
         <div class="form-footer">
             <input type="submit" class="btn" value="Save Entry" />
