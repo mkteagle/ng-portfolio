@@ -6,7 +6,7 @@
 	configureRouter.$inject = ['$stateProvider', '$urlRouterProvider'];
 
 	function configureRouter ($stateProvider, $urlRouterProvider) {
-        $urlRouterProvider.otherwise("/");
+        // $urlRouterProvider.otherwise("/");
         $stateProvider
             .state("home", {
                 url: "/",
