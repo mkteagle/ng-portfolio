@@ -173,7 +173,14 @@
 			// An error happened.
 		});
 	});
-
+	apiRoutes.post('/uploadFeatured', function(req, res) {
+        FroalaEditor.Image.upload(req, '/uploads/', function(err, data) {
+            if (err) {
+                return res.send(JSON.stringify(err));
+            }
+            res.send(data);
+        });
+	});
 
 
 

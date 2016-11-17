@@ -1,13 +1,23 @@
-<h4>You made it to the blogs</h4>
-<pre class="preclass">
-    <span class="wrap">{{ bc.blogs | orderByFilter: 'created' : true }}</span>
-</pre>
-<div ng-repeat="blog in bc.blogs| orderByFilter: 'created' : true">
-    <div>{{ blog.title }}</div>
-    <div>by <span>{{ blog.author }}</span></div>
-    <div froala-view="blog.content"></div>
-    <div><a ng-href="#/edit/{{blog.param}}">Edit Blog</a></div>
+<div class="container">
+    <h1>Blog Rollin'</h1>
+    <h2>We love it here!!!</h2>
+    <!--<pre class="preclass">-->
+        <!--<span class="wrap">{{ bc.blogs | orderByFilter: 'created' : true }}</span>-->
+    <!--</pre>-->
+    <div ng-repeat="blog in bc.blogs| orderByFilter: 'created' : true">
+        <div><a ng-href="#/post/{{blog.param}}">{{ blog.title }}</a></div>
+        <div>by <span>{{ blog.author }}</span></div>
+        <div froala-view="blog.content"></div>
+        <div><a ng-href="#/edit/{{blog.param}}">Edit Blog</a></div>
+        <!--<div><a ng-href="#/post/{{blog.param}}">View Blog</a></div>-->
+    </div>
+    <div>
+        <button ng-click="bc.createPost()">Add New Blog</button>
+    </div>
+    <div>
+        <button ng-click="bc.adminPage()">Back to Admin Page</button>
+    </div>
+    <div>
+        <button ng-click="bc.logout()">Logout</button>
+    </div>
 </div>
-<div><button ng-click="bc.createPost()">Add New Blog</button></div>
-<div><button ng-click="bc.adminPage()">Back to Admin Page</button></div>
-<div><button ng-click="bc.logout()">Logout</button></div>

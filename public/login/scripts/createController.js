@@ -17,6 +17,7 @@
         self.froalaOptions = {};
         self.blogEditor = '';
         self.onInit = onInit;
+        self.uploadFeatured = uploadFeatured;
 
         function onInit() {
             if ($localStorage.currentUser) {
@@ -34,7 +35,22 @@
         }
         self.onInit();
 
+        function uploadFeatured() {
+            self.fileSelected = function(files) {
+                if (files && files.length) {
+                    self.file = files[0];
+                }
+                var object = {
+                    file: self.file
+                };
+                self.$http.post('/api/uploadFeatured', object).then(function(response) {
+                    console.log(response, 'successful upload');
+                    self.featuredImage = response.data;
+                    console.log(self.featuredImage);
+                });
 
+            };
+        }
         function logout() {
             delete $localStorage.currentUser;
             self.$http.defaults.headers.common.Authorization = '';

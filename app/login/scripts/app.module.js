@@ -5,6 +5,9 @@
 			'loginController',
 			'ui.router',
 			'froala',
+			'ngPassword',
+			'ngMessages',
+            'angularFileUpload',
 			'ngStorage',
 			'ngLogin.config',
 			'adminController',
@@ -13,6 +16,7 @@
 			"createController",
 			"blogFilter",
 			"forgotController",
-			"editController"
+			"editController",
+			"postController"
 		])
 })();
