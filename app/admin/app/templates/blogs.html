@@ -1,0 +1,34 @@
+<h1>Blog Rollin'</h1>
+<div layout="row" layout-align="center center">
+	<span class="btn-smaller" ng-click="bc.createPost()"> + Blog </span>
+	<span class="btn-smaller" ng-click="bc.adminPage()">Back to Admin Page</span>
+	<span class="btn-smaller" ng-click="bc.logout()">Logout</span>
+</div>
+<md-table-container>
+	<table md-table ng-model="bc.selected">
+		<thead md-head md-order="bc.query.order">
+		<tr md-row>
+			<th md-column md-order-by="title"><span>Title</span></th>
+			<th md-column md-order-by="created"><span>Created</span></th>
+			<th md-column md-order-by="lastModified"><span>Last Modified</span></th>
+			<th md-column>Posted?</th>
+			<th md-column>Featured Image</th>
+			<th md-column>View Post</th>
+			<th md-column>Delete Post</th>
+		</tr>
+		</thead>
+		<tbody md-body>
+		<tr md-row md-select="title" md-select-id="title" md-auto-select ng-repeat="blog in bc.blogs.data| orderBy: bc.query.order | limitTo: bc.query.limit : (bc.query.page -1) * bc.query.limit">
+			<td md-cell><a ng-href="/edit/{{blog.param}}">{{blog.title}}</a></td>
+			<td md-cell>{{blog.created | date: 'MM-dd-yyyy h:mma'}}</td>
+			<td md-cell>{{blog.lastModified | date: 'MM-dd-yyyy h:mma'}}</td>
+			<td md-cell>{{blog.posted | postFilter}}</td>
+			<td md-cell><a ng-href="{{blog.featuredImage}}">View Image</a></td>
+			<td md-cell><a ng-href="/post/{{blog.param}}">View</a></td>
+			<td md-cell><a ng-click="bc.deleteBlog(blog)">Delete</a></td>
+		</tr>
+		</tbody>
+	</table>
+</md-table-container>
+
+<md-table-pagination md-limit="bc.query.limit" md-limit-options="[5, 10, 15]" md-page="bc.query.page" md-total="{{bc.blogs.count}}" md-page-select></md-table-pagination>

@@ -1,0 +1,14 @@
+<div class="centerstage">
+	<h1>mkteagle.com</h1>
+<div layout="row" layout-align="center center">
+    <span class="btn-smaller" ng-click="ac.createPost()"> + Blog </span>
+    <span class="btn-smaller" ng-click="ac.manageBlogs()">Blog Rollin'</span>
+    <span class="btn-smaller" ng-click="ac.registerPage()">Register New User</span>
+    <span class="btn-smaller" ng-click="ac.logout()">Logout</span>
+</div>
+	<div class="topmargin">
+		<div><h4>Welcome {{ac.displayName}}</h4></div>
+		<div><h2>You made it logged in you sneeky sneeky</h2></div>
+		<div><label>Display Name: </label><input type="text" ng-model="ac.displayName" placeholder="Display Name"></div>
+	</div>
+</div>

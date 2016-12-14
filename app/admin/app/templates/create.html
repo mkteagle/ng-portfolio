@@ -1,0 +1,70 @@
+<div class="centerstage">
+	<h1>mkteagle.com</h1>
+	<div layout="row" layout-align="center center">
+		<span class="btn-smaller" ng-click="cc.blogPage()">Back to Blog Rollin'</span>
+		<span class="btn-smaller" ng-click="cc.adminPage()">Back to Admin Page</span>
+		<span class="btn-smaller" ng-click="cc.logout()">Logout</span>
+	</div>
+	<form name="form" class="form" ng-submit="cc.saveBlog()">
+		<md-input-container>
+			<label>Title</label>
+			<input type="text" name="title" size="75" id="title" class="title" ng-required="true" required="" minlength="5"
+			       ng-model="cc.blogTitle" tabindex="0"/>
+			<div ng-messages="form.title.$error" ng-show="form.title.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="minlength">That's too short!</div>
+			</div>
+		</md-input-container>
+		<div>
+			<md-input-container>
+				<md-radio-group ng-model="cc.posted" ng-required="true" required="">
+					<md-radio-button name="posted" ng-required="true" ng-value="true">
+						Posted
+					</md-radio-button>
+					<md-radio-button name="posted" ng-required="true" ng-value="false">
+						Draft
+					</md-radio-button>
+				</md-radio-group>
+				<div ng-messages="form.posted.$error" ng-show="form.posted.$dirty">
+					<div ng-message="required">This field is required!</div>
+				</div>
+			</md-input-container>
+		</div>
+		<div>
+			<div class="featureImage">
+				<input type="file" ngf-select="" ng-model="cc.file" name="file" ngf-accept="'image/*'"
+				       ng-required="true" class="ng-pristine ng-invalid ng-invalid-required" accept="image/*">
+				<span class="btn-smaller" ng-click="cc.uploadFeatured(cc.file)">upload</span>
+			</div>
+			<div class="imageClass">
+				<div class="fi-preview"
+				     ng-style="{'background-image' : 'url(.' + cc.featuredImage + ')','background-size': 'cover','background-position': 'center center'}"></div>
+			</div>
+		</div>
+		<div>
+			<md-input-container>
+				<label>County</label>
+				<md-select ng-model="cc.county" name="countySelected" ng-required="true">
+					<md-option ng-repeat="county in cc.counties" ng-value="county.name" ng-disabled="$index === 1">
+						{{county.name}}
+					</md-option>
+				</md-select>
+				<div ng-messages="form.countySelected.$error" ng-show="form.countySelected.$dirty">
+					<div ng-message="required">This is required!</div>
+				</div>
+			</md-input-container>
+		</div>
+		<div class="form-footer">
+			<button type="submit" class="btn">Save Blog</button>
+		</div>
+		<div class="blogContent">
+			<textarea rows="100" name="content" ng-model="cc.blogContent" class="blogContent" minlength="200"
+			          ng-required="true" froala="froalaOptions"></textarea>
+			<div ng-messages="form.content.$error" ng-show="form.content.$dirty">
+				<div ng-message="required">This is required!</div>
+				<div ng-message="minlength">This is too short!</div>
+			</div>
+		</div>
+	</form>
+</div>
+</div>

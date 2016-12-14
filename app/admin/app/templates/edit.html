@@ -1,0 +1,64 @@
+<div class="centerstage">
+    <h1>mkteagle.com</h1>
+    <div layout="row" layout-align="center center">
+        <span class="btn-smaller" ng-click="ec.createPost()"> + Blog </span>
+        <span class="btn-smaller" ng-click="ec.blogPage()">Back to Blog Rollin'</span>
+        <span class="btn-smaller" ng-click="ec.adminPage()">Back to Admin Page</span>
+        <span class="btn-smaller" ng-click="ec.logout()">Logout</span>
+    </div>
+    <form name="form" class="form" ng-submit="ec.updateBlog()">
+
+	    <md-input-container>
+		    <label>Title</label>
+		    <input type="text" name="title" size="75" id="title" class="title" ng-required="true" required="" minlength="5"
+		           ng-model="ec.post.title" tabindex="0"/>
+		    <div ng-messages="form.title.$error" ng-show="form.title.$dirty">
+			    <div ng-message="required">This is required!</div>
+			    <div ng-message="minlength">That's too short!</div>
+		    </div>
+	    </md-input-container>
+	    <div>
+		    <md-input-container>
+			    <md-radio-group ng-model="ec.post.posted">
+				    <md-radio-button ng-value="true">
+					    Posted
+				    </md-radio-button>
+				    <md-radio-button ng-value="false">
+					    Draft
+				    </md-radio-button>
+			    </md-radio-group>
+		    </md-input-container>
+	    </div>
+
+        <div>
+                <input type="file" ngf-select="" ng-model="ec.file" name="file" ngf-accept="'image/*'"
+                       class="ng-pristine ng-invalid ng-invalid-required" accept="image/*">
+                <span class="btn-smaller" ng-click="ec.uploadFeatured(ec.file)">upload</span>
+            <div class="imageClass">
+                <div class="fi-preview"
+                     ng-style="{'background-image' : 'url(.' + ec.post.featuredImage + ')','background-size': 'cover','background-position': 'center center'}"></div>
+            </div>
+        </div>
+        <div>
+            <md-input-container>
+                <label>County</label>
+                <md-select ng-model="ec.post.county">
+                    <md-option ng-repeat="county in ec.counties" ng-value="county.name" ng-disabled="$index === 1">
+                        {{county.name}}
+                    </md-option>
+                </md-select>
+            </md-input-container>
+        </div>
+        <div class="form-footer">
+            <button type="submit" class="btn">Update Blog</button>
+        </div>
+	    <div class="blogContent">
+		    <textarea rows="100" name="content" ng-model="ec.post.blogContent" class="blogContent" minlength="100" ng-required="true" froala="froalaOptions"></textarea>
+		    <div ng-messages="form.content.$error" ng-show="form.content.$dirty">
+			    <div ng-message="required">This is required!</div>
+			    <div ng-message="minlength">This is too short!</div>
+		    </div>
+	    </div>
+    </form>
+</div>
+</div>

@@ -1,15 +1,15 @@
 (function () {
-    var express = require('express');
+	var express = require('express');
 	var admin = require("firebase-admin");
-    var app = express();
+	var app = express();
 	var firebase = require("firebase");
-    var bodyParser = require('body-parser');
+	var bodyParser = require('body-parser');
 	var morgan      = require('morgan');
-    var nodemailer = require('nodemailer');
+	var nodemailer = require('nodemailer');
 	var jwt = require('jwt-simple');
 	var FroalaEditor = require('../node_modules/wysiwyg-editor-node-sdk/lib/froalaEditor.js');
-    app.use(bodyParser.urlencoded({extended: true}));
-    app.use(bodyParser.json());
+	app.use(bodyParser.urlencoded({extended: true}));
+	app.use(bodyParser.json());
 	// log to console
 	app.use(morgan('dev'));
 
@@ -18,7 +18,7 @@
 	app.use('/uploads', express.static(__dirname + '/uploads'));
 	app.use('/register', express.static(__dirname + '/register'));
     app.use('/flappy', express.static(__dirname + '/flappy'));
-    app.use('/login', express.static(__dirname + '/login'));
+    app.use('/admin', express.static(__dirname + '/admin'));
     app.use('/forgot', express.static(__dirname + '/forgot'));
     app.use('/', express.static(__dirname));
     var port = (process.env.PORT || 5000);
@@ -36,11 +36,11 @@
 		credential: admin.credential.cert(serviceAccount),
 		databaseURL: "https://mkteagle-29e04.firebaseio.com"
 	});
-	
 
-    apiRoutes.post('/contact', function (req, res) {
 
-    });
+	apiRoutes.post('/contact', function (req, res) {
+
+	});
 	apiRoutes.post('/locateUser', function(req, res) {
 		admin.auth().getUser(req.body.uid)
 			.then(function(userRecord) {
@@ -134,7 +134,9 @@
 			title: req.body.title,
 			featuredImage: req.body.featuredImage,
 			content: req.body.content,
-			param: req.body.param
+			param: req.body.param,
+			posted: req.body.posted,
+			county: req.body.county
 		});
 		res.send("All Done Successfully");
 
@@ -147,24 +149,33 @@
 		})
 
 	});
-	apiRoutes.delete('/delete', function(req, res) {
+	apiRoutes.post('/deleteBlog', function(req, res) {
+		var blog = firebase.database().ref('blogs/'+ req.body.uid);
+		blog.remove().then(function(response) {
+			res.send(response);
+		}).catch(function(err) {
+			if (err) throw err;
+		})
 
 	});
 	apiRoutes.post('/updateBlog', function(req, res) {
 		console.log(req.body);
-        firebase.database().ref('blogs/' + req.body.uid).set({
-        	uid: req.body.uid,
-            author: req.body.author,
-	        created: Date.now(),
-            title: req.body.title,
-            featuredImage: req.body.featuredImage,
-            content: req.body.content,
-            param: req.body.param
-        });
-        res.send("All Done Successfully");
+		firebase.database().ref('blogs/' + req.body.uid).set({
+			uid: req.body.uid,
+			author: req.body.author,
+			created: req.body.created,
+			lastModified: Date.now(),
+			title: req.body.title,
+			featuredImage: req.body.featuredImage,
+			content: req.body.content,
+			param: req.body.param,
+			posted: req.body.posted,
+			county: req.body.county
+		});
+		res.send("All Done Successfully");
 	});
 	apiRoutes.post('/admin', function(req, res) {
-		
+
 	});
 	apiRoutes.post('/forgot', function(req, res) {
 		firebase.auth().sendPasswordResetEmail(req.body.email).then(function() {
@@ -174,41 +185,41 @@
 		});
 	});
 	apiRoutes.post('/uploadFeatured', function(req, res) {
-        FroalaEditor.Image.upload(req, '/uploads/', function(err, data) {
-            if (err) {
-                return res.send(JSON.stringify(err));
-            }
-            res.send(data);
-        });
+		FroalaEditor.Image.upload(req, '/uploads/', function(err, data) {
+			if (err) {
+				return res.send(JSON.stringify(err));
+			}
+			res.send(data);
+		});
 	});
 
 
 
 
 // create reusable transporter object using the default SMTP transport
-    apiRoutes.post('/postEmail', function (req, res) {
-        var transporter = nodemailer.createTransport('smtps://sayhellomkteagle%40gmail.com:saysomething@smtp.gmail.com');
-        var mailOptions = {
-            from: '"Site Email 👥" <' + req.body.email + '>', // sender address
-            to: 'sayhello@mkteagle.com', // list of receivers
-            subject: 'Hello from ' + req.body.name, // Subject line
-            text: 'Message: ' + req.body.content + "<br/> email: " + req.body.email
-        };
+	apiRoutes.post('/postEmail', function (req, res) {
+		var transporter = nodemailer.createTransport('smtps://sayhellomkteagle%40gmail.com:saysomething@smtp.gmail.com');
+		var mailOptions = {
+			from: '"Site Email 👥" <' + req.body.email + '>', // sender address
+			to: 'sayhello@mkteagle.com', // list of receivers
+			subject: 'Hello from ' + req.body.name, // Subject line
+			text: 'Message: ' + req.body.content + "<br/> email: " + req.body.email
+		};
 
 // send mail with defined transport object
-        transporter.sendMail(mailOptions, function (error, info) {
-            if (error) {
-                return console.log(error);
-            }
-            console.log('Message sent: ' + info.response);
-        });
+		transporter.sendMail(mailOptions, function (error, info) {
+			if (error) {
+				return console.log(error);
+			}
+			console.log('Message sent: ' + info.response);
+		});
 
 
-        res.send(true);
-    });
-    app.get('*', function (req, res) {
-        res.sendFile(__dirname + '/index.html');
-    });
+		res.send(true);
+	});
+	app.get('*', function (req, res) {
+		res.sendFile(__dirname + '/index.html');
+	});
 	app.use('/api', apiRoutes);
 	app.listen(port, function () {
 		console.log(`App listening on port ${port}...`);

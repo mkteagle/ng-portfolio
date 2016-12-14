@@ -47,7 +47,7 @@
 			$window.location.href = './register/index.html';
 		}
 		function login() {
-			$window.location.href = './login/index.html';
+			$window.location.href = './admin/index.html';
 		}
 		function blog() {
 			$window.location.href = './blog/index.html';

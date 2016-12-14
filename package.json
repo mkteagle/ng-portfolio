@@ -1,53 +1,40 @@
 {
-  "name": "ng-portfolio",
-  "version": "1.0.0",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/mkteagle/ng-portfolio.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/mkteagle/ng-portfolio/issues"
-  },
-  "homepage": "https://github.com/mkteagle/ng-portfolio#readme",
-  "dependencies": {
-    "body-parser": "^1.15.2",
-    "express": "^4.14.0",
-    "firebase": "^3.5.3",
-    "firebase-admin": "^4.0.1",
-    "forever": "^0.15.2",
-    "jwt-simple": "^0.5.0",
-    "morgan": "^1.7.0",
-    "nodemailer": "^2.5.0",
-    "wysiwyg-editor-node-sdk": "^2.3.4-rc.1"
-  },
-  "devDependencies": {
-    "browser-sync": "^2.14.0",
-    "concurrently": "^2.0.0",
-    "del": "^2.2.1",
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-cache": "^0.4.5",
-    "gulp-clean": "^0.3.2",
-    "gulp-concat": "^2.6.0",
-    "gulp-cssnano": "^2.1.2",
-    "gulp-imagemin": "^3.0.2",
-    "gulp-jshint": "^2.0.1",
-    "gulp-livereload": "^3.8.1",
-    "gulp-minify-css": "^1.2.4",
-    "gulp-nodemon": "^2.1.0",
-    "gulp-notify": "^2.2.0",
-    "gulp-open": "^2.0.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-ruby-sass": "^2.0.6",
-    "gulp-supervisor": "^0.1.2",
-    "gulp-uglify": "^2.0.0",
-    "jshint": "^2.9.2",
-    "lite-server": "^2.2.0",
-    "tiny-lr": "^0.2.1"
-  },
-  "main": "app.js",
-  "description": ""
+	"name": "ng-portfolio",
+	"version": "1.0.0",
+	"scripts": {},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/mkteagle/ng-portfolio.git"
+	},
+	"author": "",
+	"license": "ISC",
+	"bugs": {
+		"url": "https://github.com/mkteagle/ng-portfolio/issues"
+	},
+	"homepage": "https://github.com/mkteagle/ng-portfolio#readme",
+	"dependencies": {
+		"angular-animate": "^1.5.9",
+		"angular-aria": "^1.5.9",
+		"angular-filter": "^0.5.14",
+		"angular-material": "^1.1.1",
+		"angular-material-data-table": "^0.10.9",
+		"angular-moment": "^1.0.0",
+		"moment": "^2.17.0",
+		"ng-file-upload": "^12.2.13",
+		"ngstorage": "^0.3.11",
+		"underscore": "^1.8.3",
+		"body-parser": "^1.15.2",
+		"express": "^4.14.0",
+		"firebase": "^3.5.3",
+		"firebase-admin": "^4.0.1",
+		"forever": "^0.15.2",
+		"jwt-simple": "^0.5.0",
+		"morgan": "^1.7.0",
+		"nodemailer": "^2.5.0",
+		"wysiwyg-editor-node-sdk": "^2.3.4-rc.1"
+	},
+	"devDependencies": {
+	},
+	"main": "app.js",
+	"description": ""
 }
